@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BLS0140_S2_DTL_FUN" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="321c55ce-1557-4f12-be6d-56d324cff1cd">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Style1" mode="Opaque" backcolor="#99CDFF"/>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["BLS0100"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VERSION_NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FROM_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CRNCY_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["MUR"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Monthly"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TAXONOMY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1.2.0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INSTANCE_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM TABLE(BLS0140_S2_DTL_FUN($P{REPORT_ID},$P{VERSION_NO},$P{INSTANCE_CODE},$P{REPORT_DATE},$P{FROM_DATE},$P{TO_DATE},$P{CRNCY_CODE}))]]>
+	</queryString>
+	<field name="REPORT_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="REPORT_ID"/>
+	</field>
+	<field name="REPORT_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="REPORT_DATE"/>
+	</field>
+	<field name="FROM_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="FROM_DATE"/>
+	</field>
+	<field name="TO_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="TO_DATE"/>
+	</field>
+	<field name="VERSION_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="VERSION_NO"/>
+	</field>
+	<field name="CURRENCY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CURRENCY"/>
+	</field>
+	<field name="SL_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SL_NO"/>
+	</field>
+	<field name="NAME_OF_INSTRUMENT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NAME_OF_INSTRUMENT"/>
+	</field>
+	<field name="ACCT_CURRENCY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ACCT_CURRENCY"/>
+	</field>
+	<field name="AMT_FC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="AMT_FC"/>
+	</field>
+	<field name="AMT_LC" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="AMT_LC"/>
+	</field>
+	<title>
+		<band height="247">
+			<textField>
+				<reportElement x="210" y="40" width="290" height="30" uuid="cf402659-d4e5-4978-86c6-34533839e5e4"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TAXONOMY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="70" width="290" height="30" uuid="83305dc1-2130-4a1d-b249-17ecc78dcf9b"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CRNCY_CODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="100" width="200" height="30" uuid="6eca7bd6-e526-4e94-9667-18c68e5c81f1"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Reporting Frequency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="200" height="30" uuid="fe479f71-50b0-42d0-973a-ea3b21ecd9fa"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Reporting Currency]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="100" width="290" height="30" uuid="97e65d7c-c3e5-4507-a745-cc623a6a91c4"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="160" width="290" height="30" uuid="83e7d1f7-a4ce-47fe-acde-b24f3b29ba34"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TO_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="160" width="200" height="30" uuid="951e0575-fa96-4665-a4cb-9fbe2a7248fc"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Reporting End Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="190" width="200" height="30" uuid="ac2c6541-92ac-4122-a0f3-fa0b91ef8fcf"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Report Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="0" width="780" height="30" backcolor="#2D27DB" uuid="1b626ca1-297b-43e5-8ab2-daf47cdd44c5"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[BLS0140-Other accounts payable other - Miscellaneous liability items]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="190" width="290" height="30" uuid="8d0cf6ae-edda-472f-83a6-554dc3c98571"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VERSION_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="130" width="290" height="30" uuid="373438bc-0a9c-4958-b8ca-5870a0c61dbd"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FROM_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="130" width="200" height="30" uuid="d87a151f-ef63-4f73-858c-b9b656765752"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Reporting Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="200" height="30" uuid="c9705d3b-0d73-441f-bacf-f0443959099e"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Taxonomy Version]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement style="Style1" x="0" y="0" width="100" height="30" uuid="38ba2028-ef40-4e24-88ac-17b413242ab4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52a9571d-2333-4e69-89cd-dcd82bc443e6"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serial Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="100" y="0" width="160" height="30" uuid="f8f63f22-bb53-4a63-9a37-bbdd0aee322f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f12abb-de26-48a7-bc93-adb51afb567b"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name of the Instrument]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="260" y="0" width="110" height="30" uuid="3e50dbb0-99d7-4e2d-8f6d-f772a53aa64c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29c2477d-ec1a-4bcc-b9c9-2e8ba59575ac"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Account Curency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="370" y="0" width="170" height="30" uuid="61201f63-d3ac-43b1-b259-832ea19a4593">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c68659e8-8b06-4dde-abf4-33be2f582022"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Foreign Currency Amount ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="d632b833-bad2-4d01-8561-e1e4d4332db8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52a9571d-2333-4e69-89cd-dcd82bc443e6"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SL_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="160" height="30" uuid="0456a13c-7599-41ba-bbff-6ed433993f99">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f12abb-de26-48a7-bc93-adb51afb567b"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME_OF_INSTRUMENT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="110" height="30" uuid="e1e27f8c-88c5-4fa1-ab67-594f0c1cd583">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29c2477d-ec1a-4bcc-b9c9-2e8ba59575ac"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACCT_CURRENCY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="170" height="30" uuid="60235e66-9782-4fca-9754-1e071960e7b0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c68659e8-8b06-4dde-abf4-33be2f582022"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AMT_FC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

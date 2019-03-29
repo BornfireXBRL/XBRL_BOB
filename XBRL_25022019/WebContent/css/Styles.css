@@ -1,0 +1,442 @@
+/* Default CSS Stylesheet for a new Web Application project */
+
+.headerSpacing
+{
+	background-image:url(../images/Blue.gif);
+	background-repeat:repeat;
+	height:60px;
+	width:110%;
+	font-size:28px;
+	font-weight:bold;
+	text-align:center;
+	position:absolute;
+	left:0px;
+	top:0px;	
+}
+.sideMenuTable{
+	background-image:url(../images/Blue.GIF);
+	background-repeat:repeat;
+	height:120%;
+	width:20%;
+	vertical-align:left;
+	padding:0px 0px 0px 0px;
+	position:absolute;
+	top:60px;
+	left:0px;
+	bottom:0px;	
+}
+
+.imgBody
+{
+  
+    BACKGROUND-COLOR:#F8F8F8;
+    FONT-FAMILY: sans-serif,verdana;
+    FONT-SIZE: 12;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+    color:darkblue;
+    WORD-SPACING: normal;    
+    
+}
+
+.borderClass{
+	width:110%;
+	position:absolute;
+	top:50px;
+	left:0px;
+	bottom:0px;	
+}
+
+.sideMenuItem{
+	text-align:center;
+	font-weight:bold;	
+	vertical-align:10px;
+	height:10px;	
+	padding:6px 0px 6px 2px;	
+
+}
+.sideMenuHref{
+	color:darkblue;
+	text-decoration:none;
+	text-align:RIGHT;
+
+}
+.bodyContentTable{
+	width:90%;
+	height:110%;
+	position:absolute;
+	top:65px;
+	left:200px;
+	bottom:0px;	
+}
+.leftSpacer{
+
+}
+
+.bodyBackground{
+background-color:#F8F8F8;
+}
+
+.linkButtons{
+font-weight:bold;font-size:10;color:darkblue;background-color:transparent;border:0;text-decoration:underline;cursor:hand;
+}
+
+.buttons{
+font-weight:bold;font-size:10;color:darkblue;background-color:transparent;border-style:solid;border-color:black;cursor:hand;
+}
+.WhiteHead{
+	Color: white;
+	background-color:steelblue;
+}
+
+.tables
+{
+	border: 1px solid;
+	margin-top:1;
+	border-collapse:collapse;
+	cellpadding:0;
+	cellspacing:0;
+	width:150;
+	height:150;
+}
+
+.tdBorder
+{
+	border: 1px solid;
+}
+
+.tdAlign
+{
+	text-align:center;	
+}
+
+.userFont
+{
+	font-style:italic;
+	color:darkred;
+}
+
+BODY
+{
+    BACKGROUND-COLOR: ivory;
+    FONT-FAMILY: sans-serif,verdana;
+    FONT-SIZE: 12;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+    WORD-SPACING: normal
+}
+
+p{
+    FONT-FAMILY: sans-serif;
+    FONT-SIZE: 13;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    LINE-HEIGHT:2;
+    WORD-SPACING: normal;
+    text-indent:25px;
+    color:black;
+    margin-bottom:30;
+}
+H1, H2, H3, H4, H5
+{
+    COLOR: darkblue;
+}
+TH, THEAD, TFOOT
+{
+    COLOR: WHITE;    
+}
+
+table
+{
+	border-collapse:collapse;
+	cellpadding:0;
+	cellspacing:0;
+}
+
+
+
+H1	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	21;
+	font-weight:normal;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H2	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	17;
+	font-weight:600; 
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H3	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	18;
+	font-weight:	bold;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H5, DT	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	1em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H6	{	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	.8em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+TFOOT, THEAD	{	
+	font-size:	12;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: verdana;	
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	height:10;
+	}	
+		
+TH	{	
+	background-image:url(../images/menu_collapse.gif);
+	vertical-align:	baseline;
+	font-size:	11;
+	font-weight:	bold;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;	
+	font-family: verdana;
+	background-color: silver;
+	height:5; 
+	}	
+TD	{	
+	vertical-align:	baseline;
+	font-size:	12;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: sans-serif,verdana;	
+	}	
+
+select { 
+font-family: sans-serif,Verdana, Arial, Helvetica;
+font-size: 12;
+color:darkblue;
+border: green;  
+border-style: solid;       
+border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;
+width:170;
+height:20;
+} 
+
+.fieldsetLogin{   
+width:250;
+border-color:red; 
+}
+
+A:link	
+{
+	text-decoration:	none;
+	color:	darkred;
+	}	
+		
+A:visited	{	
+	text-decoration:	none;
+	color:	purple;
+	}	
+		
+A:active	{	
+	text-decoration:	none;
+	color:	red;
+	}	
+		
+A:hover	{	
+	text-decoration:	none;
+	font-weight:bold;
+	color:darkblue;
+	}
+	
+SMALL	{	
+	font-size:	.7em;
+	}	
+
+BIG	{	
+	font-size:	1.17em;
+	}	
+
+BLOCKQUOTE, PRE	{	
+	font-family:	Courier New, monospace;
+	}	
+	
+
+UL LI	{	
+	list-style-type:	square ;
+	}	
+
+UL LI LI	{	
+	list-style-type:	disc;
+	}	
+
+UL LI LI LI	{	
+	list-style-type:	circle;
+	}	
+	
+OL LI	{	
+	list-style-type:	decimal;
+	}	
+
+OL OL LI	{	
+	list-style-type:	lower-alpha;
+	}	
+
+OL OL OL LI	{	
+	list-style-type:	lower-roman;
+	}	
+
+IMG 	{
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;	
+	}
+.preCopyright{
+	font-family:verdana;
+	font-size:10;
+	text-align:right;
+	color:darkblue;
+}
+
+.mailSendColured{
+	text-align:center;	
+	background-color: lightblue;
+}
+.mailApproveColured{
+	text-align:center;	
+	background-color: lightgreen;
+}
+.normalRecord{
+	text-align:center;
+	font-weight:bold;
+}
+
+.dateSearch{
+	text-align:center;	
+	font-weight:bold;
+	font-family:verdana;
+	font-size:12;
+}
+.adminLinks{
+	text-align:left;
+	font-weight:bold;
+	color:blue;
+	width:50%;
+}
+.adminSubMenuLinks{
+	text-align:left;
+	font-weight:bold;
+	color:darkblue;
+	font-size:14;
+	width:40%;
+	padding-left:7px;
+}
+.adminLinksTable{
+	width=40%;
+}
+
+.adminRadio{
+	text-align:right;
+	padding-right:7px;	
+}
+.arsFooter{
+	background-color: blue;	
+	font-family:arial;	
+}
+.confirmationMessage{
+	padding-left:7px;
+	color:red;
+	font-size:13;
+	font-weight:bold;
+}
+.allUsersData{
+	text-align:center;
+	font-size:13;
+	font-weight:bold;	
+}
+.allUsersDataSelected{
+	text-align:center;
+	font-size:13;
+	font-weight:bold;	
+	background-color: lightgreen;
+}
+.uploadPathTable{
+	width=80%;
+}
+.uploadTableItemDesc{
+	text-align:left;
+	font-size:14;
+	font-weight:bold;	
+}
+.userButton
+{
+	width:80;
+	font-family:Bookman;
+	font-weight:bold;
+	border-color:buttonface;
+	font-size:9;
+	color:darkblack;
+	background-color:transparent;
+	cursor:hand;
+}
+
+.deleteButton
+{
+	width:70;
+	font-family:Bookman;
+	font-weight:bold;
+	border-color:buttonface;
+	border:rigid;
+	font-size:9;
+	color:red;
+	background-color:transparent;
+	cursor:hand;
+}
+
+
+A.sortHref:visited{color:white;font-weight:bold;}
+A.sortHref:active{color:white;font-weight:bold;}
+A.sortHref:hover{color:red;font-weight:bold;}
+
+.visitorTable{
+	width=60%;
+}
+
+.background {  
+	background: url(../images/bank1.jpg) no-repeat;
+	background-size: 100%;
+}

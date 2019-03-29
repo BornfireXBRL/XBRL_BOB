@@ -1,0 +1,158 @@
+ <!-- *********************PSC0104******************************** -->
+     
+     
+     
+		<action name="PSC0104EXCELREPORT1" class="reports.XBRLPSC0104ActionXL"
+			method="PSC0104EXCEL1">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="PSC0104EXCELREPORT2" class="reports.XBRLPSC0104ActionXL"
+			method="PSC0104EXCEL2">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="PSC0104EXCELREPORT3" class="reports.XBRLPSC0104ActionXL"
+			method="PSC0104EXCEL3">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 		  
+ 		  
+<action name="PSC0104criteria" class="dao.CriteriaDao" method="PSC0104criteriaCheck">
+<result type="json"/>
+</action>
+ 
+<action name="PSC0104sec1"  class="action.XBRLPSC0104Action" method="section1PSC0104">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0104sec2"  class="action.XBRLPSC0104Action" method="section2PSC0104">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0104sec3"  class="action.XBRLPSC0104Action" method="section3PSC0104">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+     
+           
+           <action name="PSC0104details1"  class="action.XBRLPSC0104Action" method="detail1PSC0104">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+ <action name="PSC0104details2"  class="action.XBRLPSC0104Action" method="detail2PSC0104">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+ <action name="PSC0104details3"  class="action.XBRLPSC0104Action" method="detail3PSC0104">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+            
+             <action name="PSC0104s1" class="action.XBRLPSC0104Action" method="modXbPSC1Create104">
+			<result type="json" />
+		</action>
+            
+            
+             <action name="PSC0104s2" class="action.XBRLPSC0104Action" method="modXbPSC2Create104">
+			<result type="json" />
+		</action>
+            
+             <action name="PSC0104s3" class="action.XBRLPSC0104Action" method="modXbPSC3Create104">
+			<result type="json" />
+		</action>
+            
+             
+            <!--  ************************* end of PSC0104   ************************* -->
+            
+
+
+
+
+
+
+
+
+
+/*********************     start of psc0104criteria   ********************/
+
+
+public String PSC0104criteriaCheck(){
+
+HttpServletRequest request = ServletActionContext.getRequest();
+HttpSession session = request.getSession();
+
+String status = "";
+
+ConnectionManager connMgr = new ConnectionManager();
+Connection conn = connMgr.getConnection();
+PreparedStatement ps = null;
+StringBuffer sql = new StringBuffer();
+
+DateFormat df=new DateFormat();
+
+System.out.println("dateeeeeeeeeeeeeeee" + request.getParameter("dt1"));
+
+System.out.println("dateeeeeeeeeeeeeeee" + request.getParameter("dt2"));
+
+/*sql.append("select (select count(REPORT_DATE)  from PSC0104_S1_MAST_TABLE where REPORT_DATE BETWEEN '"+df.formatdate(request.getParameter("dt1"))+"' and '"+df.formatdate(request.getParameter("dt2"))+"' ORDER BY REPORT_DATE ASC)+(select count(REPORT_DATE)  from PSC0104_S2_MAST_TABLE where REPORT_DATE BETWEEN '"+df.formatdate(request.getParameter("dt1"))+"' and '"+df.formatdate(request.getParameter("dt2"))+"' ORDER BY REPORT_DATE ASC )+(select count(REPORT_DATE)  from PSC0104_S3_MAST_TABLE where REPORT_DATE BETWEEN '"+df.formatdate(request.getParameter("dt1"))+"' and '"+df.formatdate(request.getParameter("dt2"))+"'    ORDER BY REPORT_DATE ASC ) as repdate from dual");	
+*/
+
+sql.append(" select (select count(REPORT_DATE)  from PSC0104_S3_MAST_TABLE where REPORT_DATE BETWEEN '"+df.formatdate(request.getParameter("dt1"))+"' and '"+df.formatdate(request.getParameter("dt2"))+"'   )+(select count(REPORT_DATE)  from PSC0104_S2_MAST_TABLE where REPORT_DATE BETWEEN '"+df.formatdate(request.getParameter("dt1"))+"' and '"+df.formatdate(request.getParameter("dt2"))+"'    )+(select count(REPORT_DATE)  from PSC0104_S1_MAST_TABLE where REPORT_DATE BETWEEN '"+df.formatdate(request.getParameter("dt1"))+"' and '"+df.formatdate(request.getParameter("dt2"))+"'  )  as repdate from dual");	
+
+
+System.out.println("SELECTPROFILE"+ sql.toString());
+
+try {
+	ps=conn.prepareStatement(sql.toString());
+	
+
+    ResultSet rs = ps.executeQuery();
+	if (rs.next()) {						
+		psc0104 = rs.getInt("repdate"); 
+	
+		
+}
+	
+}catch (SQLException e) {
+	
+	e.printStackTrace();
+} finally {
+
+	if (ps != null) {
+		try {
+			ps.close();
+		} catch (SQLException e) {
+			
+		}
+	}
+	if (conn != null) {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			
+		}
+	}
+}
+return "success";
+}
+
+/*********************     end of psc0104criteria   ********************/

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 5.5.2  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CRR0100_MAIN" pageWidth="1000" pageHeight="595" orientation="Landscape" columnWidth="960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="8ee24fba-7875-4dfd-9c50-c4328470443a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="XBRL.xml"/>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["BLS0100"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VERSION_NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FROM_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CRNCY_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["MUR"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String"/>
+	<parameter name="TAXONOMY" class="java.lang.String"/>
+	<parameter name="SUB_REPORT_DIR1" class="java.io.File"/>
+	<parameter name="SUB_REPORT_DIR2" class="java.io.File"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT  * FROM REPORT_MASTER_TB]]>
+	</queryString>
+	<title>
+		<band height="230">
+			<staticText>
+				<reportElement x="-1" y="0" width="780" height="40" backcolor="#2D27DB" uuid="e4915dbc-8159-41a3-9aa3-4cfd9307e69d"/>
+				<textElement>
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[CRR0100-Statement of the Maintenance of Cash Reserve Ratio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="80" width="246" height="30" uuid="91ad4a98-f0bb-4075-8d7c-8d40ff11c864"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="110" width="246" height="30" uuid="6657171a-c7f1-4623-98c2-fba97517f482"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Frequency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="140" width="246" height="30" uuid="d9db9801-179f-447b-a2fd-62da7b345eec"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="200" width="246" height="30" uuid="2475aa98-42d2-41c7-ad57-04b6e2fc310d"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Report Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="50" width="246" height="30" uuid="e96930e5-dcc7-471a-9daa-f91b1f60c501"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Taxonomy Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="170" width="246" height="30" uuid="9c8abf28-41ab-4b87-ae4a-d6e54ce977d4"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting End Date]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="80" width="350" height="30" uuid="234bef51-6699-45da-af03-63bfe9cdeb32"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CRNCY_CODE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="200" width="350" height="30" uuid="20da4f2d-da58-48e6-9be9-5a13c19794dd"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VERSION_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="110" width="350" height="30" uuid="10541221-8f78-46ee-9f83-cf03410ee28f"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="140" width="350" height="30" uuid="926f6668-de78-48ac-8fe5-11a8ba004b99"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FROM_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="170" width="350" height="30" uuid="4515a9d4-fd86-400e-8b51-dd0c92ac9ede"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TO_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="50" width="350" height="30" uuid="9ae92905-3bb8-47a3-9106-67178f0f24da"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TAXONOMY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="443" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="41" width="200" height="77" uuid="c4c933e6-2caa-46dc-af37-ee80f6ccd99e"/>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="VERSION_NO">
+					<subreportParameterExpression><![CDATA[$P{VERSION_NO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_DATE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FROM_DATE">
+					<subreportParameterExpression><![CDATA[$P{FROM_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TO_DATE">
+					<subreportParameterExpression><![CDATA[$P{TO_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CRNCY_CODE">
+					<subreportParameterExpression><![CDATA[$P{CRNCY_CODE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORTING_FREQUENCY">
+					<subreportParameterExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TAXONOMY">
+					<subreportParameterExpression><![CDATA[$P{TAXONOMY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUB_REPORT_DIR1}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="120" width="200" height="67" uuid="8e169d8b-457f-4066-ba40-bc0682ca4213"/>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="VERSION_NO">
+					<subreportParameterExpression><![CDATA[$P{VERSION_NO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_DATE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FROM_DATE">
+					<subreportParameterExpression><![CDATA[$P{FROM_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TO_DATE">
+					<subreportParameterExpression><![CDATA[$P{TO_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CRNCY_CODE">
+					<subreportParameterExpression><![CDATA[$P{CRNCY_CODE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORTING_FREQUENCY">
+					<subreportParameterExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TAXONOMY">
+					<subreportParameterExpression><![CDATA[$P{TAXONOMY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUB_REPORT_DIR2}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

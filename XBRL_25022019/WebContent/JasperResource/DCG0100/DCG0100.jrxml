@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DCG0100" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a465670-cc4a-4270-965f-8efb86e33b71">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#EFEFEF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tableDataset" uuid="4f87dc85-5f3a-40ce-8883-712cb9e234bc">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="REPORT_ID" class="java.lang.String"/>
+		<parameter name="VERSION_NO" class="java.lang.String"/>
+		<parameter name="REPORT_DATE" class="java.lang.String"/>
+		<parameter name="FROM_DATE" class="java.lang.String"/>
+		<parameter name="TO_DATE" class="java.lang.String"/>
+		<parameter name="CRNCY_CODE" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM TABLE(DCG0100_RPT_FUN($P{REPORT_ID},$P{VERSION_NO},$P{REPORT_DATE},$P{FROM_DATE},$P{TO_DATE},$P{CRNCY_CODE}))]]>
+		</queryString>
+		<field name="REPORT_ID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="REPORT_ID"/>
+		</field>
+		<field name="REPORT_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="REPORT_DATE"/>
+		</field>
+		<field name="FROM_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="FROM_DATE"/>
+		</field>
+		<field name="TO_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="TO_DATE"/>
+		</field>
+		<field name="VERSION_NO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="VERSION_NO"/>
+		</field>
+		<field name="INSTANCE_CODE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="INSTANCE_CODE"/>
+		</field>
+		<field name="INSTANCE_NAME" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="INSTANCE_NAME"/>
+		</field>
+		<field name="NO_OF_COINS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="NO_OF_COINS"/>
+		</field>
+	</subDataset>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["DCG0100"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VERSION_NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-MAR-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FROM_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-MAR-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-MAR-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CRNCY_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["MUR"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Monthly"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TAXONOMY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1.0.0"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="230" splitType="Stretch">
+			<textField>
+				<reportElement x="270" y="50" width="340" height="30" uuid="4f86d826-8892-4726-a60e-b5db000c05a1"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TAXONOMY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="200" width="256" height="30" uuid="24f6c58e-1f3a-49e4-95bb-0da2da2a825e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Report Reference No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="170" width="340" height="30" uuid="b9d84030-81e6-407e-aac0-a0631b040944"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TO_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="256" height="30" uuid="2ac51a5a-d423-4fcc-9de1-5929df2808e3"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Taxonomy Version]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="140" width="340" height="30" uuid="31e1374a-1a33-4825-9c6d-fe60b9ce98f4"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FROM_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="170" width="256" height="30" uuid="d6b04d9c-c4f2-4925-8868-8ed83b57e1da"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting End Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="140" width="10" height="30" uuid="10133a5a-9903-49c5-af8e-f8bdcccdba7e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="80" width="10" height="30" uuid="9195b7b5-50f0-4a45-8378-d76463062d09"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="110" width="10" height="30" uuid="0ebadcd9-035a-47e2-a7c0-8a3c39e12785"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="0" width="780" height="40" backcolor="#2D27DB" uuid="127c8cfb-1460-4cee-a414-b4ecb62acb02"/>
+				<textElement>
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[DCG0100-Balance of Dodo Gold Coins Held on Consignment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="200" width="340" height="30" uuid="7a1b8c89-c62f-4d43-ab33-dd0298953c66"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VERSION_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="110" width="256" height="30" uuid="9ef561b0-f74c-48b7-aa47-d52272c62250"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Frequency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="170" width="10" height="30" uuid="e345cbd4-b72e-4348-a97a-7cc62417158a"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="80" width="340" height="30" uuid="8f83088d-0b70-4a90-b943-95484314abe4"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CRNCY_CODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="50" width="10" height="30" uuid="eeeb9896-4aa8-4945-8d31-a05968e6c87e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="256" height="30" uuid="d23531ce-16a4-4236-8efe-c5e4b02e0bc5"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="256" height="30" uuid="f02cc7dd-111d-48d8-9df5-6938a803ae4e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="200" width="10" height="30" uuid="a7cc8a4c-6a49-4569-a2ba-e62c3705b9c6"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="110" width="340" height="30" uuid="c71bf273-2594-47cb-9dc9-ecc85653b981"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="200" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<componentElement>
+				<reportElement x="0" y="40" width="802" height="90" uuid="eaa3c684-9455-4af7-9756-e9e6415c680a">
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="tableDataset" uuid="e12af3b1-c04e-4270-ab73-a079da7ecd7f">
+						<datasetParameter name="REPORT_ID">
+							<datasetParameterExpression><![CDATA[$P{REPORT_ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="VERSION_NO">
+							<datasetParameterExpression><![CDATA[$P{VERSION_NO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="REPORT_DATE">
+							<datasetParameterExpression><![CDATA[$P{REPORT_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="FROM_DATE">
+							<datasetParameterExpression><![CDATA[$P{FROM_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="TO_DATE">
+							<datasetParameterExpression><![CDATA[$P{TO_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CRNCY_CODE">
+							<datasetParameterExpression><![CDATA[$P{CRNCY_CODE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="140" uuid="94ed6698-990b-4e26-b924-f65c62074940">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="140" height="60" uuid="f235da4a-1a2f-4070-98ba-7f5ad0079ad1"/>
+								<box leftPadding="2"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="140" height="30" uuid="7460ba2f-7887-470e-9fec-a09d7f362d9f"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{INSTANCE_CODE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="220" uuid="dc8db85f-11f2-48c6-b785-e68c31cf53be">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="220" height="60" uuid="a069c4cb-1cb1-4ec7-9e07-0093808707e1"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Type of Dodo Gold Coins]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="220" height="30" uuid="879728f1-d0d8-42fe-8332-6feeb241d346"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12"/>
+									<paragraph leftIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{INSTANCE_NAME}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="250" uuid="08465524-0888-42c9-be75-63d059d03cdf">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="60" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="250" height="60" backcolor="#99CDFF" uuid="480b2339-41cf-4eab-9f2d-6829d2967e73"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Number of Dodo Gold Coins]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.###;(#,##0.###-)">
+								<reportElement x="0" y="0" width="250" height="30" uuid="4e7abe19-1ae2-4f8a-9836-2393404de662"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{NO_OF_COINS}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

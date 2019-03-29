@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SUP1200_S3" pageWidth="2000" pageHeight="800" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a465670-cc4a-4270-965f-8efb86e33b71">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#EFEFEF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tableDataset" uuid="4e320af4-af1e-41df-9d36-55e25e8dee93">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="REPORT_ID" class="java.lang.String"/>
+		<parameter name="VERSION_NO" class="java.lang.String"/>
+		<parameter name="REPORT_DATE" class="java.lang.String"/>
+		<parameter name="FROM_DATE" class="java.lang.String"/>
+		<parameter name="TO_DATE" class="java.lang.String"/>
+		<parameter name="CRNCY_CODE" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM TABLE(sup1200_S3_RPT_FUN($P{REPORT_ID},$P{VERSION_NO},$P{REPORT_DATE},$P{FROM_DATE},$P{TO_DATE},$P{CRNCY_CODE}))]]>
+		</queryString>
+		<field name="REPORT_ID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="REPORT_ID"/>
+		</field>
+		<field name="REPORT_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="REPORT_DATE"/>
+		</field>
+		<field name="FROM_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="FROM_DATE"/>
+		</field>
+		<field name="TO_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="TO_DATE"/>
+		</field>
+		<field name="VERSION_NO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="VERSION_NO"/>
+		</field>
+		<field name="CURRENCY" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="CURRENCY"/>
+		</field>
+		<field name="ULTIMATE_BENE_SL_NO" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="ULTIMATE_BENE_SL_NO"/>
+		</field>
+		<field name="TRAN_SL_NO" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="TRAN_SL_NO"/>
+		</field>
+		<field name="NAME_OF_BENEFICIARY" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="NAME_OF_BENEFICIARY"/>
+		</field>
+		<field name="NAME_OF_SHAREHOLDER" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="NAME_OF_SHAREHOLDER"/>
+		</field>
+		<field name="CITIZENSHIP" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="CITIZENSHIP"/>
+		</field>
+		<field name="TYPE_OF_HOLDING" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="TYPE_OF_HOLDING"/>
+		</field>
+		<field name="NO_OF_SHARES_HELD" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="NO_OF_SHARES_HELD"/>
+		</field>
+		<field name="PERCENTAGE_OF_SHARE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="PERCENTAGE_OF_SHARE"/>
+		</field>
+		<field name="PER_OF_DIR_INDIR_SHARE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="PER_OF_DIR_INDIR_SHARE"/>
+		</field>
+	</subDataset>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["SUP1200"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VERSION_NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["30-JUN2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FROM_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-JUN-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["30-JUN-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CRNCY_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["MUR"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Half yearly"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TAXONOMY" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1.0.0"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<summary>
+		<band height="213" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<componentElement>
+				<reportElement x="0" y="13" width="1860" height="200" uuid="9cca68c0-804c-484b-8aea-ef14a49cb3ca">
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="tableDataset" uuid="b9a57db2-802a-41c7-882e-064f1caee06f">
+						<datasetParameter name="REPORT_ID">
+							<datasetParameterExpression><![CDATA[$P{REPORT_ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="VERSION_NO">
+							<datasetParameterExpression><![CDATA[$P{VERSION_NO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="REPORT_DATE">
+							<datasetParameterExpression><![CDATA[$P{REPORT_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="FROM_DATE">
+							<datasetParameterExpression><![CDATA[$P{FROM_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="TO_DATE">
+							<datasetParameterExpression><![CDATA[$P{TO_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CRNCY_CODE">
+							<datasetParameterExpression><![CDATA[$P{CRNCY_CODE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:columnGroup width="1854" uuid="6fb8226c-a713-45e7-9072-d98d94efc8a0">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [9]"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="1854" height="30" backcolor="#99CDFF" uuid="b6dc6d43-d084-420d-b4e0-73e784cde03c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Details of shares held by shareholders in financial institution share capital where ultimate beneficiary owner holds directly/ indirectly  5% or more								]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:column width="210" uuid="7b8c6d99-a234-46a4-aed9-b34669ba47ae">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="210" height="120" backcolor="#99CDFF" uuid="42c574c5-7089-4320-b0c7-423ea26cbe03"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Ultimate beneficiary owner Sr.No.]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="50">
+								<textField isBlankWhenNull="true">
+									<reportElement x="0" y="0" width="210" height="50" uuid="d331e5aa-66f6-49ab-8c80-4f64969ed631"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+										<paragraph leftIndent="5"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{ULTIMATE_BENE_SL_NO}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="200" uuid="e8d18794-6d16-47e4-aea2-7c57b858f95e">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="200" height="120" backcolor="#99CDFF" uuid="3ad4c2c1-fa9a-416d-9c55-8095c42a4d88"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Transaction Sr.No.]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="50">
+								<textField isBlankWhenNull="true">
+									<reportElement x="0" y="0" width="200" height="50" uuid="b4ea94b3-7a3a-4f77-b2a3-bf35559a2688"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{TRAN_SL_NO}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="160" uuid="49d8c311-477e-42d2-b174-d075640b4cc6">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="160" height="30" backcolor="#99CDFF" uuid="e6463b4c-447f-4a4f-95bd-eea62e0e0bac"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true" isStrikeThrough="false"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="160" uuid="09e6ebe4-1a79-4c3e-9960-1ec83f709d64">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="160" height="90" backcolor="#99CDFF" uuid="b82de2a8-4c1c-4199-952a-aae572ad811f"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Name of ultimate beneficiary owner]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="160" height="50" uuid="42598b83-bdfd-4d82-b62f-b1115d17600d"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph leftIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{NAME_OF_BENEFICIARY}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="170" uuid="ec680082-c824-42e5-953e-69fdfc9659ad">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="170" height="30" backcolor="#99CDFF" uuid="8a455216-227b-4dc8-9297-c0edd0356567"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="170" uuid="551ad185-db7e-4e7c-aee9-22d342beceb6">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="170" height="90" backcolor="#99CDFF" uuid="4c7c4039-928a-428d-b392-ba3c61ceaf7c"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Name of shareholder as per institution share register]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="170" height="50" uuid="95bbf0cb-f153-48f5-91c8-5028d235e40a"/>
+										<box leftPadding="2"/>
+										<textElement verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph leftIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{NAME_OF_SHAREHOLDER}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="220" uuid="da327cff-e708-4b66-a2df-590b26fae966">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="220" height="30" backcolor="#99CDFF" uuid="16be9cab-46b9-470a-b8ba-b955c371e3e9"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="220" uuid="03241fdc-2603-420e-a39f-5b18c46c96db">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="220" height="90" backcolor="#99CDFF" uuid="0d82b6d7-b1ed-4266-b67a-bfdb3e322799"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Citizenship of shareholder as per institution share register]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="220" height="50" uuid="ec64e3dc-f570-4c37-b4a8-4378f800354f"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph leftIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{CITIZENSHIP}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="214" uuid="09531bda-2b04-4718-b33f-e48d5744daf6">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="214" height="30" backcolor="#99CDFF" uuid="42f75614-549a-4957-8fc1-a9a7e6f35d2f"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="214" uuid="964a7e99-3e91-4cf7-accc-a5a101f00692">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="214" height="90" backcolor="#99CDFF" uuid="108dfaa6-d3ca-4884-8fe8-63dedff43c52"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Type of holding]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="214" height="50" uuid="3ce9de9c-1958-4840-a265-72ed66071f0d"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph leftIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{TYPE_OF_HOLDING}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="210" uuid="a8c6e1d5-c1de-45d0-9912-cf9bdfce59e1">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="210" height="30" backcolor="#99CDFF" uuid="5b33f882-6e57-42bb-85e6-9157a372a37d"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="210" uuid="626110c4-ba01-4095-93f0-018abf392bfb">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="210" height="90" backcolor="#99CDFF" uuid="d6af3366-1410-4980-9965-1a1f2b500730"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Number of shares held by shareholders]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="210" height="50" uuid="93aafc35-8c91-44d4-a45d-8d4ff931288b"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph rightIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{NO_OF_SHARES_HELD}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="190" uuid="85941c80-3b99-46ec-b147-f408dba8e739">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="190" height="30" backcolor="#99CDFF" uuid="76ddfb95-df92-42e3-a6ec-b4b516c99ee3"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="190" uuid="1d92c09b-4d2b-471c-b9b7-9420e1e73f4a">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="190" height="90" backcolor="#99CDFF" uuid="c33ce937-74dd-4cef-b152-de769889d5b9"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Percentage of shares held by shareholder]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="190" height="50" uuid="eed33efe-82ec-43b3-9454-5a9826ae30f4"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph rightIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{PERCENTAGE_OF_SHARE}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="280" uuid="58e696f1-9925-4905-a3a0-d14259c1f1bc">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [1]"/>
+							<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement mode="Opaque" x="0" y="0" width="280" height="30" backcolor="#99CDFF" uuid="95a7674f-ac83-4ab4-bcfb-c7906463f66f"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="14" isBold="true" isItalic="false"/>
+									</textElement>
+									<text><![CDATA[Ordinary share 1]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="280" uuid="2a043f6a-5d3f-444e-b123-b281683b92f1">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+								<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="280" height="90" backcolor="#99CDFF" uuid="cba4d1b0-40d1-4905-aedc-264596945cc7"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="14" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Percentage  of shares held by ultimate beneficiary owner directly/ indirectly [equivalent of de-facto and de-jure]]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="50">
+									<textField isBlankWhenNull="true">
+										<reportElement x="0" y="0" width="280" height="50" uuid="70276fc2-01c6-472c-a4c4-6212585b0b27"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+											<paragraph rightIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{PER_OF_DIR_INDIR_SHARE}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

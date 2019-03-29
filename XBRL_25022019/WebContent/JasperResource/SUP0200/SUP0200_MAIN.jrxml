@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SUP0200_MAIN" pageWidth="1600" pageHeight="5000" orientation="Landscape" columnWidth="1560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="6a80b70a-d413-47c4-aaff-a21e968cbad2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="XBRL.xml"/>
+	<parameter name="REPORT_ID" class="java.lang.String"/>
+	<parameter name="VERSION_NO" class="java.lang.String"/>
+	<parameter name="REPORT_DATE" class="java.lang.String"/>
+	<parameter name="FROM_DATE" class="java.lang.String"/>
+	<parameter name="TO_DATE" class="java.lang.String"/>
+	<parameter name="CRNCY_CODE" class="java.lang.String"/>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String"/>
+	<parameter name="TAXONOMY" class="java.lang.String"/>
+	<parameter name="SUB_REPORT_DIR1" class="java.io.File"/>
+	<parameter name="SUB_REPORT_DIR2" class="java.io.File"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM XBRL_REPORT_MASTER_TB WHERE REPORT_ID='SUP0200']]>
+	</queryString>
+	<summary>
+		<band height="4959" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="550" height="97" uuid="d0af1258-a116-4547-904b-d8815938817d"/>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="VERSION_NO">
+					<subreportParameterExpression><![CDATA[$P{VERSION_NO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_DATE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FROM_DATE">
+					<subreportParameterExpression><![CDATA[$P{FROM_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TO_DATE">
+					<subreportParameterExpression><![CDATA[$P{TO_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CRNCY_CODE">
+					<subreportParameterExpression><![CDATA[$P{CRNCY_CODE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORTING_FREQUENCY">
+					<subreportParameterExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TAXONOMY">
+					<subreportParameterExpression><![CDATA[$P{TAXONOMY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUB_REPORT_DIR1}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="1785" width="441" height="95" uuid="af541f40-7d91-4772-8b34-6cf44024dbbe"/>
+				<subreportParameter name="REPORT_ID">
+					<subreportParameterExpression><![CDATA[$P{REPORT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="VERSION_NO">
+					<subreportParameterExpression><![CDATA[$P{VERSION_NO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_DATE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FROM_DATE">
+					<subreportParameterExpression><![CDATA[$P{FROM_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TO_DATE">
+					<subreportParameterExpression><![CDATA[$P{TO_DATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="CRNCY_CODE">
+					<subreportParameterExpression><![CDATA[$P{CRNCY_CODE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORTING_FREQUENCY">
+					<subreportParameterExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TAXONOMY">
+					<subreportParameterExpression><![CDATA[$P{TAXONOMY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUB_REPORT_DIR2}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

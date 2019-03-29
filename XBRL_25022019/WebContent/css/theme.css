@@ -1,0 +1,192 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url(../Images/bg.jpg) no-repeat center #0f433e;
+    background-size: cover;
+}
+
+.login-form {
+    width: 400px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 6px;
+}
+
+.login-form .form-control {
+    border-radius: 0;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome, Arial;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.login-form .btn-success {
+    width: 35%;
+}
+
+.login-form .panel {
+    margin-bottom: 0;
+}
+
+.header {
+    background-color: white;
+    padding: 6px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    border-top: 6px solid #ddd;
+}
+
+.header .row{
+    display: flex;
+    background-color: beige;
+}
+
+.header .row .col-sm-8{
+    align-self: center;
+}
+
+.header .top-menu-navigation a{
+    color: #008830;
+    /*font-weight: bold;*/
+    display: inline-block;
+    padding: 8px 25px;
+    font-family: verdana;
+}
+
+.header .top-menu-navigation a:hover{
+    color: #333;
+}
+
+.header img {
+    width: 70px;
+    margin-right: 18px;
+}
+
+.header h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;        
+    font-size: x-large;
+    color: darkorange;   
+    padding-left: 1px;
+}
+
+.page-content-wrapper {
+    height: calc(100% - 95px);
+}
+
+.page-content-wrapper .container-fluid,
+.page-content-wrapper .container-fluid > .row,
+.page-content-wrapper .container-fluid > .row .col-sm-3 {
+    height: 107%;
+}
+
+.side-menu {
+    background: black;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.side-menu .panel-group {
+    margin-bottom: 0;
+}
+
+.side-menu .panel {
+    background-color: transparent;
+}
+
+.side-menu .panel-default {
+    border: none;
+    border-radius: 0;
+}
+
+.side-menu .panel-default .panel-heading {
+    background-color: black;
+    border: none;
+    color: darkgoldenrod;
+    font-family: verdana;
+}
+
+.side-menu .panel-default .panel-heading a {
+    display: block;
+    /*padding-top: 8px;
+    padding-bottom: 8px;*/
+}
+
+.side-menu .panel-default .panel-heading a:hover,
+.side-menu .panel-default .panel-heading a:focus {
+    text-decoration: none;
+}
+
+.side-menu .panel-group .panel+.panel {
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-menu .list-group {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.side-menu .list-group a:last-child {
+    border-radius: 0 !important;
+}
+
+.side-menu .list-group-item {
+    /*color: #828282;*/
+    color:cornsilk;
+    font-family:verdana;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-menu .list-group-item:hover,
+.side-menu .list-group-item:focus,
+.side-menu .list-group-item:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Struts Login form css */
+
+
+.login-form .wwFormTable{
+    width: 100%;
+}
+
+.login-form .wwFormTable .tdLabel{
+    width:100%;
+    display: block;
+}
+
+
+.login-form .wwFormTable .tdLabel .label{
+        color: #333;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 0;
+}
+
+.login-form .wwFormTable .tdLabel + td{
+    width:100%;
+    display: block;
+}
+
+.login-form .wwFormTable .tdLabel + td .form-control{
+	margin-bottom: 20px;
+}
+
+.login-form .wwFormTable tr:last-child div{
+	text-align:center !important;	
+}

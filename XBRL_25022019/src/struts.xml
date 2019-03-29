@@ -1,0 +1,5101 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false"></constant>
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+
+
+	<package name="default" extends="struts-default,json-default"
+		namespace="/">
+
+
+		<interceptors>
+			<interceptor-stack name="defaultStack1">
+				<interceptor-ref name="json">
+					<param name="enableSMD">true</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+<global-results>
+			<result name="sesserror" type="redirect">/jsp/XBRLLogin.jsp</result>
+			
+		</global-results>
+
+
+		<action name="login" class="action.LoginAction">
+			<result name="success">/jsp/XBRLMainPage.jsp</result>
+			<result name="error">/jsp/XBRLLogin.jsp</result>
+			<result name="clear">/jsp/XBRLLogin.jsp</result>
+		</action>
+
+		<action name="logout" class="action.LoginAction" method="logout">
+
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+
+		<action name="getMenuPage" class="dao.XBRLMenuDao" method="getReportDeatails">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="menuid" class="action.XBRLUserProfileAction" method="insertMenu">
+<interceptor-ref name="defaultStack1" />
+<result type="json" />
+</action>
+		<action name="checkpassexisit" class="dao.XBRLUserProfileDao"
+			method="checkpass">
+			<result type="json" />
+
+		</action>
+		 <!-- UPDATE PASSWORD -->
+<action name="updpass" class="dao.XBRLUserProfileDao"
+method="updpass">
+<result type="json" />
+
+</action>
+		
+		<action name="getMenuPagearch" class="dao.XBRLMenuDao" method="getReportarch">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+<action name="repdatebop0300" class="action.XBRLBOP0300ArchivalAction"
+			method="repdatebop0300">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="xbModCreate" class="action.XBRLBOPAction" method="modXbCreate">
+			<result name="success">/jsp/BOP0300/XBRLResultAlert.jsp</result>
+		</action>
+
+		<action name="xbMod" class="action.XBRLBOPAction" method="modXb">
+			<result name="success">/jsp/BOP0300/XBRLResultAlert.jsp</result>
+		</action>
+
+		<action name="xbMod1" class="action.XBRLBOPAction" method="modXb1">
+			<result name="success">/jsp/BOP0300/XBRLResultAlert.jsp</result>
+		</action>
+
+		<action name="xbModEdit" class="action.XBRLBOPAction" method="modXbEdit">
+			<result name="success">/jsp/BOP0300/XBRLResultAlert1.jsp</result>
+		</action>
+
+		<action name="BOP0300" class="action.XBRLBOP0300Action" method="modBOPCreate300">
+			<result type="json" />
+		</action>
+
+		<!-- loading data from summary to details -->
+
+		<action name="domdetails" class="action.XBRLBOPAction" method="DominqDetails">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<!-- <action name="downXML" class="action.WriteXMLFile" method="gani"> 
+			<interceptor-ref name="defaultStack1" /> <result type="json"/> </action> -->
+
+
+	<!-- 	<action name="downXML" class="action.WriteXMLFile" method="gani">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> -->
+
+
+
+		<!-- <action name="dateandDay" class="action.DateDayaction" method="dateandDay"> 
+			<interceptor-ref name="defaultStack1" /> <result type="json"></result> </action> -->
+
+		<!-- <action name="dateandDay1" class="action.DateDayaction" method="dateandDay1"> 
+			<interceptor-ref name="defaultStack1" /> <result type="json"></result> </acton> -->
+
+
+		<!-- <action name="Count" class="action.DateDayaction" method="Country"> 
+			<interceptor-ref name="defaultStack1" /> <result type="json"></result> </action> -->
+
+		<!-- ************************************ CRR100 *********************************** -->
+
+		<!-- <action name="xbModcrr100" class="action.XBRLCRR100Action" method="modXbcrrCreate"> 
+			<result name="success">/jsp/XBRLResultAlertCRR.jsp</result> </action> -->
+
+
+		<!-- <action name="xbModcrr100AC" class="action.XBRLCRR100ActionAC" method="modXbcrrCreateAC"> 
+			<result name="success">/jsp/XBRLResultAlertCRR.jsp</result> </action> -->
+
+
+
+		<!-- <action name="xbFIMModCreate" class="action.XBRLFIM0300Action" method="modXbFIMCreate"> 
+			<result name="success">/jsp/XBRLResultAlertFIM.jsp</result> </action> -->
+
+
+
+
+
+
+
+		<action name="CRR100AB" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAB">
+			<result type="json" />
+		</action>
+		<action name="CRR100AC" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAC">
+			<result type="json" />
+		</action>
+		<action name="CRR100AD" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAD">
+			<result type="json" />
+		</action>
+		<action name="CRR100AI" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAI">
+			<result type="json" />
+		</action>
+		<action name="CRR100BB" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateBB">
+			<result type="json" />
+		</action>
+
+		<action name="CRR100AC" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAC">
+			<result type="json" />
+		</action>
+
+		<action name="CRR100AE" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAE">
+			<result type="json" />
+		</action>
+
+		<action name="CRR100AH" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAH">
+			<result type="json" />
+		</action>
+
+		<action name="CRR100AF" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAF">
+			<result type="json" />
+		</action>
+
+		<action name="CRR100AG" class="action.XBRLCRR100ActionAC"
+			method="modXbcrrCreateAG">
+			<result type="json" />
+		</action>
+
+	
+
+
+	
+
+
+		
+
+
+	
+		
+   <!--START  SUP0100  -->
+		<action name="SUP0100criteria" class="dao.CriteriaDao" method="SUP0100criteriaCheck">
+			<result type="json" />
+		</action>
+<action name="finddata" class="action.XBRLSUP0100Action" method="SUP0100data">
+			<result type="json" />
+		</action>
+<action name="sup0100Forminsert" class="action.XBRLSUP0100Action" method="sup0100Formins"> 
+			<result type="json" />
+			 </action>
+
+<action name="sup0100Formmodify" class="action.XBRLSUP0100Action" method="sup0100Formmod"> 
+			<result type="json" />
+			 </action>
+			 
+			 <action name="SUP0100EXCELSum" class="reports.XBRLSUP0100ActionSumXL"
+			method="SUP0100EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		 <action name="SUP0100PDFREPORT" class="reportsPDF.XBRLSUP0100ActionPDF"
+			method="SUP0100PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		<action name="saveSums1" method="detailSUP0100saves" class="dao.XBRLSUP0100Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="XMLDOWNLOADs1" class="reports.XMLDOWNLOAD" method="supxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+<!-- END SUP0100 -->
+ 
+ <!-- ============================== START SUP0101 ================================== -->
+ 
+<action name="SUP0101criteria" class="dao.CriteriaDao" method="SUP0101criteriaCheck">
+			<result type="json" />
+		</action>
+<action name="sup0101Forminsert" class="action.XBRLSUP0101Action" method="sup0101Formins"> 
+			<result type="json" />
+			 </action>
+<action name="sup0101Formselect" class="action.XBRLSUP0101Action" method="sup0101Formselect">
+			<result type="json" />
+		</action>
+		
+		<action name="SUP0101EXCELSum" class="reports.XBRLSUP0101ActionSumXL"
+			method="SUP0101EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		 <action name="SUP0101PDFREPORT" class="reportsPDF.XBRLSUP0101ActionPDF"
+			method="SUP0101PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		<action name="saveSums101" method="detailSUP0101saves" class="dao.XBRLSUP0101Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="XMLDOWNLOADs101" class="reports.XMLDOWNLOAD" method="supxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+<!-- END SUP0101 -->
+
+ <!--START  SUP0200  -->
+		<action name="SUP0200criteria" class="dao.CriteriaDao" method="SUP0200criteriaCheck">
+			<result type="json" />
+		</action>
+<action name="finddata200" class="action.XBRLSUP0200Action" method="SUP0200data">
+			<result type="json" />
+		</action>
+<action name="SUP0200Forminsert" class="action.XBRLSUP0200Action" method="SUP0200Formins"> 
+			<result type="json" />
+			 </action>
+
+<action name="SUP0200Formmodify" class="action.XBRLSUP0200Action" method="SUP0200Formmod"> 
+			<result type="json" />
+			 </action>
+			  
+<action name="sup0200s1Formselect" class="action.XBRLSUP0200Action" method="sup0200s1Formselect">
+			<result type="json" />
+		</action>
+		
+		<action name="sup0200sec1insajx" class="action.XBRLSUP0200Action" method="sup0200sec1ajaxins"> 
+			<result type="json" />
+			 </action>
+			 
+	<action name="saveSums200" method="detailSUP0200saves" class="dao.XBRLSUP0200Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		 
+		
+ 
+ 
+ <action name="SUP0200PDFREPORT" class="reportsPDF.XBRLSUP0200ActionPDF"
+			method="SUP0200PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		<action name="SUP0200EXCELSum" class="reports.XBRLSUP0200ActionSumXL"
+			method="SUP0200EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="XMLDOWNLOADs1" class="reports.XMLDOWNLOAD" method="supxml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+<!-- END SUP0200 -->
+		<action name="BOP0300criteria" class="dao.CriteriaDao" method="BOP0300criteriaCheck">
+			<result type="json" />
+		</action>
+
+
+
+		<action name="PYM0100" class="action.XBRLPYM0100Action" method="modXbPYMCreate100">
+			<result type="json" />
+		</action>
+
+
+		<action name="BOP0300" class="action.XBRLBOP0300Action" method="modBOPCreate300">
+			<result type="json" />
+		</action>
+
+		<action name="pym0100criteria" class="dao.CriteriaDao" method="PYM0100criteriaCheck">
+			<result type="json" />
+		</action>
+
+		<action name="Parmcriteria" class="dao.ParameterDao" method="ParmcriteriaCheck">
+			<result type="json" />
+		</action>
+
+
+
+		<action name="PYM0100SUM" method="summaryPYM0100detail" class="action.XBRLPYM0100Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="BOP0300SUM" method="summaryBOP0300detail" class="action.XBRLBOP0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="pymdetails" method="detailPYM0100" class="action.XBRLPYM0100Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="refcodeType" method="refcodeType" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="refcode" method="refcode" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="refcodelist" method="refcodelist" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<!--**************************SUP0600**********************************  -->
+             
+             <action name="SUP0600criteria" class="dao.CriteriaDao" method="SUP0600criteriaCheck">
+<result type="json"/>
+</action>
+
+<action name="sup0600sec1" class="action.XBRLSUP0600Action" method="section1SUP0600" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0600sec2" class="action.XBRLSUP0600Action" method="section2SUP0600" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0600sec3" class="action.XBRLSUP0600Action" method="section3SUP0600" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0600sec4" class="action.XBRLSUP0600Action" method="section4SUP0600" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0600details" class="action.XBRLSUP0600Action" method="detailsSUP0600" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+		
+		<action name="SUP0600" class="action.XBRLSUP0600Action" method="modXbSUPCreate600">
+			<result type="json" />
+		</action>
+		
+		<action name="SUP0600EXCELREPORT" class="reports.XBRLSUP0600ActionXL"
+			method="SUP0600EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="XMLDOWNLOADs0" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSums0" method="detailSUP0600saves" class="dao.XBRLSUP0600Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		
+		<!--************************** end  SUP0600**********************************  -->
+		
+<!--**************************SUP0601**********************************  -->
+             
+             <action name="SUP0601criteria" class="dao.CriteriaDao" method="SUP0601criteriaCheck">
+<result type="json"/>
+</action>
+
+<action name="sup0601sec1" class="action.XBRLSUP0601Action" method="section1SUP0601" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0601sec2" class="action.XBRLSUP0601Action" method="section2SUP0601" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0601sec3" class="action.XBRLSUP0601Action" method="section3SUP0601" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+            <action name="SUP0601details" class="action.XBRLSUP0601Action" method="detailsSUP0601" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action> 
+             
+<action name="SUP0601" class="action.XBRLSUP0601Action" method="modXbSUPCreate601">
+			<result type="json" />
+		</action>
+		
+		<action name="SUP0601EXCELREPORT" class="reports.XBRLSUP0601ActionXL"
+			method="SUP0601EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="XMLDOWNLOADs1" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSums1" method="detailSUP0601saves" class="dao.XBRLSUP0601Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<!--************************** end  SUP0601**********************************  -->
+
+
+
+
+<!-- SUP0602 -->
+	 <!-- 	<action name="SUP0602EXCELSum" class="reports.XBRLSUP0602ActionSumXL"
+			method="SUP0602EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		 <action name="SUP0602PDFREPORT" class="reportsPDF.XBRLSUP0602ActionPDF"
+			method="SUP0602PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  -->
+		
+		<action name="SUP0602EXCELREPORT" class="reports.XBRLSUP0602ActionXL"
+			method="SUP0602EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		  <action name="SUP0602" class="action.XBRLSUP0602Action" method="modXbSUPCreate602">   
+			<result type="json"/>
+			</action> 
+		<!--   <action name="saveSumf1" method="detailSUP0602saves" class="dao.XBRLSUP0602Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>  -->
+		<action name="SUP0602criteria" class="dao.CriteriaDao" method="SUP0602criteriaCheck">
+			<result type="json" />
+		</action> 
+		
+		<action name="SUP0602sec1" method="summary1SUP0602detail" class="action.XBRLSUP0602Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="SUP0602SUM" method="summarySUP0602detail" class="action.XBRLSUP0602Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="sup0602details" method="detailSUP0602" class="action.XBRLSUP0602Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+			<action name="XMLDOWNLOADs2" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSums2" method="detailSUP0602saves" class="dao.XBRLSUP0602Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+<!-- SUP0602 -->
+
+
+
+             
+
+<!--**************************SUP0603**********************************  -->
+             <action name="SUP0603chckmodified" class="dao.XBRLSUP0603Dao" method="SUP0603chckmodified">
+			<result type="json" />
+		</action>
+
+
+<action name="sup0603verify" class="action.XBRLSUP0603Action" method="sup0603verify">
+			<result type="json" />
+		</action>
+		
+		<action name="SUP0603vermaster" class="action.XBRLSUP0603Action" method="SUP0603vermaster">
+			<result type="json" />
+		</action>
+			<action name="SUP0603cancel" class="dao.XBRLSUP0603Dao" method="modSUP0603cancel">   
+			<result type="json"/>
+			</action>
+		
+		<!--  -->
+		<action name="savechecks3" method="detailSUP0603savecheck" class="dao.XBRLSUP0603Dao">
+
+<result type="json" />
+</action>
+             <action name="SUP0603criteria" class="dao.CriteriaDao" method="SUP0603criteriaCheck">
+<result type="json"/>
+</action>
+
+<action name="sup0603sec1" class="action.XBRLSUP0603Action" method="section1SUP0603" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0603sec2" class="action.XBRLSUP0603Action" method="section2SUP0603" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+           
+             <action name="SUP0603details" class="action.XBRLSUP0603Action" method="detailsSUP0603" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action> 
+             	
+		<action name="SUP0603" class="action.XBRLSUP0603Action" method="modXbSUPCreate603">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="SUP0603EXCELREPORT" class="reports.XBRLSUP0603ActionXL"
+			method="SUP0603EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+			<action name="XMLDOWNLOADs3" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSums3" method="detailSUP0603saves" class="dao.XBRLSUP0603Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+             <!--**************************END  SUP0603**********************************  -->
+             
+             <!--**************************SUP0604**********************************  -->
+             
+             <action name="SUP0604criteria" class="dao.CriteriaDao" method="SUP0604criteriaCheck">
+<result type="json"/>
+</action>
+
+ <action name="sup0604sec1" class="action.XBRLSUP0604Action" method="section1SUP0604" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+              
+             <action name="sup0604sec2" class="action.XBRLSUP0604Action" method="section2SUP0604" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0604details" class="action.XBRLSUP0604Action" method="detailsSUP0604" >
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+		
+		<action name="SUP0604" class="action.XBRLSUP0604Action" method="modXbSUPCreate604">
+			<result type="json" />
+		</action>
+		
+		<action name="SUP0604EXCELREPORT" class="reports.XBRLSUP0604ActionXL"
+			method="SUP0604EXCEL">
+			<result name="success" type="stream">SUP0601
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		
+			<action name="XMLDOWNLOADs4" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSums4" method="detailSUP0604saves" class="dao.XBRLSUP0604Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<!--************************** end  SUP0604**********************************  -->
+		
+        <!-- ************************************ SUP0605 *********************************** -->
+               <action name="savecheckSUP0605" method="detailSUP0605savecheck" class="dao.XBRLSUP0605Dao">
+		<result type="json" />
+		</action>    
+		 <action name="saveSumSUP0605" method="detailSUP0605saves" class="dao.XBRLSUP0605Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>                       
+                           <action name="SUP0605EXCELREPORT" class="reports.XBRLSUP0605ActionXL"
+			method="SUP0605EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>               
+                                          
+                                
+                                          
+                                          
+         <action name="SUP0605criteria" class="dao.CriteriaDao" method="SUP0605criteriaCheck">
+			<result type="json" />
+		</action> 
+		<action name="SUP0605sec1" method="summary1SUP0605detail" class="action.XBRLSUP0605Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		                
+	  
+		<action name="sup0605details" method="detailSUP0605" class="action.XBRLSUP0605Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>   
+ 	
+			<action name="XMLDOWNLOADs5" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		 
+		
+		<action name="SUP0605" class="action.XBRLSUP0605Action" method="modXbSUPCreate605">   
+			<result type="json"/>
+			</action> 
+		   
+		   <action name="SUP0605cancel" class="dao.XBRLSUP0605Dao" method="modSUP0605cancel">   
+			<result type="json"/>
+			</action>
+		  
+		   
+ <action name="SUP0605chckmodified" class="dao.XBRLSUP0605Dao" method="SUP0605chckmodified">
+			<result type="json" />
+		</action>
+ <action name="SUP0605verify" class="action.XBRLSUP0605Action" method="SUP0605verify">
+			<result type="json" />
+		</action>
+		<action name="SUP0605vermaster" class="action.XBRLSUP0605Action" method="SUP0605vermaster">
+			<result type="json" />
+		</action>
+               <!-- ========================================= SUP0605 =======================   -->
+             
+               <!--**************************START  SUP0606**********************************  -->
+              <action name="SUP0606chckmodified" class="dao.XBRLSUP0606Dao" method="SUP0606chckmodified">
+			<result type="json" />
+		</action>
+
+
+<action name="sup0606verify" class="action.XBRLSUP0606Action" method="sup0606verify">
+			<result type="json" />
+		</action>
+		
+		<action name="SUP0606vermaster" class="action.XBRLSUP0606Action" method="SUP0606vermaster">
+			<result type="json" />
+		</action>
+			<action name="SUP0606cancel" class="dao.XBRLSUP0606Dao" method="modSUP0606cancel">   
+			<result type="json"/>
+			</action>
+		
+		<!--  -->
+		<action name="savechecks6" method="detailSUP0606savecheck" class="dao.XBRLSUP0606Dao">
+
+<result type="json" />
+</action>
+              <action name="SUP0606criteria" class="dao.CriteriaDao" method="SUP0606criteriaCheck">
+<result type="json"/>
+</action>
+             <action name="SUP0606" class="action.XBRLSUP0606Action" method="modXbSUPCreate606">   
+			<result type="json"/>
+			</action> 
+	
+		<action name="SUP0606sec1" method="summary1SUP0606detail" class="action.XBRLSUP0606Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="SUP0606SUM" method="summarySUP0606detail" class="action.XBRLSUP0606Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+<action name="SUP0606SUM3" method="summary3SUP0606detail" class="action.XBRLSUP0606Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP0606details" method="detailSUP0606" class="action.XBRLSUP0606Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+			<action name="XMLDOWNLOADs6" class="reports.XMLDOWNLOAD" method="sup6xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSums6" method="detailSUP0606saves" class="dao.XBRLSUP0606Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+             
+               <!--**************************END  SUP0606**********************************  -->
+		<!-- <action name="PYM0100SUM" method="summaryPYM0100detail" class="action.XBRLPYM0100Action"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> </action> -->
+
+
+		<action name="pym0100EXCELREPORT" class="reports.XBRLPYM0100ActionXL"
+			method="pym0100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="pym0100EXCELSum" class="reports.XBRLPYM0100ActionSumXL"
+			method="pym0100EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+		
+
+
+		
+
+
+		<action name="pym0100PDFREPORT" class="reportsPDF.XBRLPYM0100ActionPDF"
+			method="pym0100PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+
+		<action name="XMLDOWNLOAD" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSumpym" method="detailPYM0100saves" class="dao.XBRLPYM0100Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+
+
+
+		<!-- BOP0300 -->
+		<action name="bop300details" method="detailBOP0300" class="action.XBRLBOP0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="saveSumbop300" method="detailBOP0300saves" class="dao.XBRLBOP0300Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<!-- ************************recent xlsfor0bop300******************************* -->
+
+
+		<action name="bop0300PDFREPORT" class="reportsPDF.XBRLBOP0300ActionPDF"
+			method="bop0300PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+		<action name="bop0300EXCELREPORT" class="reports.XBRLBOP0300ActionXL"
+			method="bop0300EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="bop0300EXCELSum" class="reports.XBRLBOP0300ActionSumXL"
+			method="bop0300EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<!-- ************************recent xlsfor0bop300******************************* -->
+<action name="druploadFile" class="action.BulkUploadPym0100Action"
+			method="pym0100Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFile" class="action.BulkUploadPym0100Action"
+			method="pym0100Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+
+		<!-- reference code configuration -->
+		<action name="refcodeType" method="refcodeType" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="refcode" method="refcode" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="refcodelist" method="refcodelist" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="syscodeupd" method="syscodeupd" class="action.XBRL_CONFIG">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<!-- <action name="useradd" class="action.UserProfileAction" method="addUser">
+			<result name="success">XBRL_ResultAlert.jsp</result>
+			<result name="error">/jsp/XBRL_ResultAlert.jsp</result>
+
+		</action>
+		<action name="userDetails" class="action.UserProfileAction"
+			method="inqDetails">
+
+			<result type="json" />
+		</action>
+		<action name="userverify" class="action.UserProfileAction"
+			method="userOperation">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+			<result name="error">/jsp/XBRL_ResultAlert.jsp</result>
+
+		</action> -->
+		<!-- FIM0100 -->
+		<action name="FIM0100EXCELSum" class="reports.XBRLFIM0100ActionSumXL"
+			method="FIM0100EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		 <action name="FIM0100PDFREPORT" class="reportsPDF.XBRLFIM0100ActionPDF"
+			method="FIM0100PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		<action name="FIM0100EXCELREPORT" class="reports.XBRLFIM0100ActionXL"
+			method="FIM0100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		 <action name="XMLDOWNLOADf1" class="reports.XMLDOWNLOAD" method="pymxml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		<action name="FIM0100" class="action.XBRLFIM0100Action" method="modXbBLSCreate100">   
+			<result type="json"/>
+			</action>
+		<action name="saveSumf1" method="detailFIM0100saves" class="dao.XBRLFIM0100Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="FIM0100criteria" class="dao.CriteriaDao" method="FIM0100criteriaCheck">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0100sec1" method="summary1FIM0100detail" class="action.XBRLFIM0100Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="FIM0100SUM" method="summaryFIM0100detail" class="action.XBRLFIM0100Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="fim100details" method="detailFIM0100" class="action.XBRLFIM0100Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="userslno" class="basecode.SequenceNumber" method="userSlnum">
+
+			<result type="json" />
+		</action>
+<action name="druploadFilefim100" class="action.BulkUploadFim0100Action"
+			method="fim0100Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilefim100" class="action.BulkUploadFim0100Action"
+			method="fim0100Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+ <action name="FIM0100chckmodified" class="dao.XBRLFIM0100Dao" method="FIM0100chckmodified">
+			<result type="json" />
+		</action>
+ 
+
+<action name="fim0100verify" class="action.XBRLFIM0100Action" method="fim0100verify">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0100vermaster" class="action.XBRLFIM0100Action" method="FIM0100vermaster">
+			<result type="json" />
+		</action>
+			<action name="FIM0100cancel" class="dao.XBRLFIM0100Dao" method="modFIM0100cancel">   
+			<result type="json"/>
+			</action>
+		
+		
+		 <action name="savecheckFIM1" method="detailFIM0100savecheck" class="dao.XBRLFIM0100Dao">
+
+<result type="json" />
+</action> 
+	<!-- BLS0600 -->
+	
+ <action name="BLS0600chckmodified" class="dao.XBRLBLS0600Dao" method="BLS0600chckmodified">
+			<result type="json" />
+		</action>
+ 
+
+ <action name="bls0600verify" class="action.XBRLBLS0600Action" method="bls0600verify">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0600vermaster" class="action.XBRLBLS0600Action" method="BLS0600vermaster">
+			<result type="json" />
+		</action>
+			<action name="BLS0600cancel" class="dao.XBRLBLS0600Dao" method="modBLS0600cancel">   
+			<result type="json"/>
+			</action>
+		
+		
+		 <action name="savecheckBLS6" method="detailBLS0600savecheck" class="dao.XBRLBLS0600Dao">
+
+<result type="json" />
+</action>
+ <action name="BLS0600PDFREPORT" class="reportsPDF.XBRLBLS0600ActionPDF"
+			method="BLS0600PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+	  <action name="BLS0600EXCELREPORT" class="reports.XBRLBLS0600ActionXL"
+			method="BLS0600EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+			 <action name="XMLDOWNLOADb6" class="reports.XMLDOWNLOAD" method="blsxml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		
+		 <action name="BLS0600EXCELSum" class="reports.XBRLBLS0600ActionSumXL"
+			method="BLS0600EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+  
+  
+<action name="BLS0600" class="action.XBRLBLS0600Action" method="modXbBLSCreate600">   
+			<result type="json"/>
+			</action>
+
+
+			<action name="saveSumb6" method="detailBLS0600saves" class="dao.XBRLBLS0600Dao">
+ <interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+			</action>
+			 <action name="BLS0600criteria" class="dao.CriteriaDao" method="BLS0600criteriaCheck">
+			 <interceptor-ref name="defaultStack1"/>
+			<result type="json"/>
+			</action>
+			<action name="BLS0600SUM" method="summaryBLS0600detail" class="action.XBRLBLS0600Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+        
+             <action name="BLS0600details" method="detailBLS0600" class="action.XBRLBLS0600Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+
+	
+
+
+
+ <!-- FIM0800 -->
+ <action name="fim0800verify" class="action.XBRLFIM0800Action" method="fim0800verify">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0800vermaster" class="action.XBRLFIM0800Action" method="FIM0800vermaster">
+			<result type="json" />
+		</action>
+			<action name="FIM0800cancel" class="dao.XBRLFIM0800Dao" method="modFIM0800cancel">   
+			<result type="json"/>
+			</action>
+		
+ <action name="FIM0800chckmodified" class="dao.XBRLFIM0800Dao" method="FIM0800chckmodified">
+			<result type="json" />
+		</action>
+ 
+ <action name="druploadFilefim800" class="action.BulkUploadFim0800Action"
+			method="fim0800Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+		 <action name="savecheckFIM0800" method="detailFIM0800savecheck" class="dao.XBRLFIM0800Dao">
+
+<result type="json" />
+</action>
+		
+			<action name="drcsvuploadFilefim800" class="action.BulkUploadFim0800Action"
+			method="fim0800Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+			 <action name="FIM0800criteria" class="dao.CriteriaDao" method="FIM0800criteriaCheck"> 
+			<result type="json"/>
+			</action>
+			
+			<action name="FIM0800" class="action.XBRLFIM0800Action" method="modXbFIMCreate800">   
+			<result type="json"/>
+			</action>
+
+
+
+			<action name="FIM0800SUM" method="summaryFIM0800detail" class="action.XBRLFIM0800Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+
+
+			<action name="saveSumf8" method="detailFIM0800saves" class="dao.XBRLFIM0800Dao">
+ 			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+			</action>
+
+
+		<action name="FIM0800details" method="detailFIM0800" class="action.XBRLFIM0800Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+
+
+<action name="FIM0800EXCELSum" class="reports.XBRLFIM0800ActionSumXL"
+			method="FIM0800EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="FIM0800PDFREPORT" class="reportsPDF.XBRLFIM0800ActionPDF"
+			method="FIM0800PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+
+<action name="FIM0800EXCELREPORT" class="reports.XBRLFIM0800ActionXL"
+			method="FIM0800EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	
+
+<action name="XMLDOWNLOADfim800" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+
+<!-- END OF FIM0800 -->
+
+<!-- FIM0200 -->
+<action name="druploadFilefim200" class="action.BulkUploadFim0200Action"
+			method="fim0200Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilefim200" class="action.BulkUploadFim0200Action"
+			method="fim0200Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+
+
+
+		<action name="savecheckFIM2" method="detailFIM0200savecheck" class="dao.XBRLFIM0200Dao">
+
+<result type="json" />
+</action>
+		<!-- ref -->
+	
+<action name="FIM0200chckmodified" class="dao.XBRLFIM0200Dao" method="FIM0200chckmodified">
+			<result type="json" />
+		</action>
+
+
+<action name="fim0200verify" class="action.XBRLFIM0200Action" method="fim0200verify">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0200vermaster" class="action.XBRLFIM0200Action" method="FIM0200vermaster">
+			<result type="json" />
+		</action>
+		
+				<action name="FIM0200cancel" class="dao.XBRLFIM0200Dao" method="modFIM0200cancel">   
+			<result type="json"/>
+			</action>
+		<!--  -->
+		<action name="saveSumf2" method="detailFIM0200saves" class="dao.XBRLFIM0200Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+			<action name="FIM0200criteria" class="dao.CriteriaDao" method="FIM0200criteriaCheck">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0200SUM1" method="summary1FIM0200detail" class="action.XBRLFIM0200Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="FIM0200SUM2" method="summaryFIM0200detail" class="action.XBRLFIM0200Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="fim200details" method="detailFIM0200" class="action.XBRLFIM0200Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="FIM0200" class="action.XBRLFIM0200Action" method="modXbBLSCreate200">   
+			<result type="json"/>
+			</action>
+		
+		
+		
+		<action name="FIM0200EXCELSum" class="reports.XBRLFIM0200ActionSumXL"
+			method="FIM0200EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="FIM0200PDFREPORT" class="reportsPDF.XBRLFIM0200ActionPDF"
+			method="FIM0200PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+  <action name="FIM0200EXCELREPORT" class="reports.XBRLFIM0200ActionXL"
+			method="FIM0200EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="XMLDOWNLOADfim200" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<!-- DCG0100 -->
+		<!-- ref -->
+	<action name="druploadFiledcg100" class="action.BulkUploadDcg0100Action"
+			method="dcg0100Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFiledcg100" class="action.BulkUploadDcg0100Action"
+			method="dcg0100Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+<action name="DCG0100chckmodified" class="dao.XBRLDCG0100Dao" method="DCG0100chckmodified">
+			<result type="json" />
+		</action>
+
+
+<action name="dcg0100verify" class="action.XBRLDCG0100Action" method="dcg0100verify">
+			<result type="json" />
+		</action>
+		
+		<action name="DCG0100vermaster" class="action.XBRLDCG0100Action" method="DCG0100vermaster">
+			<result type="json" />
+		</action>
+			<action name="DCG0100cancel" class="dao.XBRLDCG0100Dao" method="modDCG0100cancel">   
+			<result type="json"/>
+			</action>
+		
+		<!--  -->
+		<action name="savecheckDCG" method="detailDCG0100savecheck" class="dao.XBRLDCG0100Dao">
+
+<result type="json" />
+</action>
+		
+			 <action name="DCG0100criteria" class="dao.CriteriaDao" method="DCG0100criteriaCheck"> 
+			<result type="json"/>
+			</action>
+			
+			<action name="DCG0100" class="action.XBRLDCG0100Action" method="modXbDCGCreate100">   
+			<result type="json"/>
+			</action>
+			
+		
+			<action name="DCG0100EXCELREPORT" class="reports.XBRLDCG0100ActionXL"
+			method="DCG0100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+<action name="XMLDOWNLOADd1" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+<action name="saveSumd1" method="detailDCG0100saves" class="dao.XBRLDCG0100Dao">
+ 			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+			</action>
+
+
+
+			<action name="DCG0100SUM" method="summaryDCG0100detail" class="action.XBRLDCG0100Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+
+
+		
+			
+		<action name="DCG0100details" method="detailDCG0100" class="action.XBRLDCG0100Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+             
+             	<action name="DCG0100EXCELSum" class="reports.XBRLDCG0100ActionSumXL"
+			method="DCG0100EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		 <action name="DCG0100PDFREPORT" class="reportsPDF.XBRLDCG0100ActionPDF"
+			method="DCG0100PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+<!-- END OF DCG0100 -->
+
+
+ <!-- ************************** STSRT BLS0106**************************** -->
+		    <action name="savecheckbls0106" method="detailBLS0106savecheck" class="dao.XBRLBLS0106Dao">
+		<result type="json" />
+		</action>
+         
+		    <action name="BLS0106chckmodified" class="dao.XBRLBLS0106Dao" method="BLS0106chckmodified">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0106verify" class="action.XBRLBLS0106Action" method="BLS0106verify">
+			<result type="json" />
+		</action>
+	
+	<action name="BLS0106vermaster" class="action.XBRLBLS0106Action" method="BLS0106vermaster">
+			<result type="json" />
+		</action>
+		
+		    <action name="BLS0106cancel" class="dao.XBRLBLS0106Dao" method="modBLS0106cancel">   
+			<result type="json"/>
+			</action>
+			
+			
+			<action name="saveSumbls1" method="detailBLS0106saves" class="dao.XBRLBLS0106Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="XMLDOWNLOADBLS0106" class="reports.XMLDOWNLOAD" method="bls0106xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		 <!-- ***************************************** END OF BLS0106 ******************************** -->
+			    		  <!--******************************* START OF sup00604 **********************-->
+			    	<action name="savecheckSUP0604" method="detailSUP0604savecheck" class="dao.XBRLSUP0604Dao">
+		<result type="json" />
+		</action>
+		    		  
+		    		  
+		    		  
+		   <action name="SUP0604chckmodified" class="dao.XBRLSUP0604Dao" method="SUP0604chckmodified">
+			<result type="json" />
+		</action>
+		 		  
+		 		  
+		 		  <action name="SUP0604verify" class="action.XBRLSUP0604Action" method="SUP0604verify">
+			<result type="json" />
+		</action>	
+		
+		<action name="SUP0604vermaster" class="action.XBRLSUP0604Action" method="SUP0604vermaster">
+			<result type="json" />
+		</action>  
+		
+		<action name="SUP0604cancel" class="dao.XBRLSUP0604Dao" method="modSUP0604cancel">   
+			<result type="json"/>
+			</action>
+			
+			<action name="saveSum" method="detailSUP0604saves" class="dao.XBRLSUP0604Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		
+			    		  
+			    		  <!--******************************* ent OF sup0604 **********************-->
+		   		  <!--******************************* START OF PSC0500 **********************-->
+		    <action name="PSC0500chckmodified" class="dao.XBRLPSC0500Dao" method="PSC0500chckmodified">
+			<result type="json" />
+		</action>
+		   		  
+		   		  
+			   <!--******************************* END OF PSC0500 **********************-->
+			    		  
+			    		  
+			    		  
+	
+		    		    		  <!--******************************* START OF FIM0900 **********************-->
+		    		    		  
+	    		  
+		   <action name="savecheckfim0900" method="detailFIM0900savecheck" class="dao.XBRLFIM0900Dao">
+		<result type="json" />
+		</action>
+		
+		  <action name="FIM0900chckmodified" class="dao.XBRLFIM0900Dao" method="FIM0900chckmodified">
+			<result type="json" />
+		</action>
+		
+		
+		
+	<action name="FIM0900verify" class="action.XBRLFIM0900Action" method="FIM0900verify">
+			<result type="json" />
+		</action>
+				
+	
+	<action name="FIM0900vermaster" class="action.XBRLFIM0900Action" method="FIM0900vermaster">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="FIM0900cancel" class="dao.XBRLFIM0900Dao" method="modFIM0900cancel">   
+			<result type="json"/>
+			</action>
+			
+	<action name="saveSumd1" method="detailFIM0900saves" class="dao.XBRLFIM0900Dao">
+ 			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+			</action>
+
+
+		    				    		    		  
+		    		    		  <!--******************************* END OF FIM0900 **********************-->
+		    
+		    
+		    		  <!--******************************* START OF PSC0501 **********************-->
+		    		  
+		    		  <action name="savecheckpsc0501" method="detailPSC0501savecheck" class="dao.XBRLPSC0501Dao">
+		<result type="json" />
+		</action>
+		    		  
+		    		  
+		    		  	    <action name="PSC0501chckmodified" class="dao.XBRLPSC0501Dao" method="PSC0501chckmodified">
+			<result type="json" />
+		</action>
+		
+		
+		
+		
+		<action name="PSC0501verify" class="action.XBRLPSC0501Action" method="PSC0501verify">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="PSC0501vermaster" class="action.XBRLPSC0501Action" method="PSC0501vermaster">
+			<result type="json" />
+		</action>
+		
+		
+		
+		<action name="PSC0501cancel" class="dao.XBRLPSC0501Dao" method="modPSC0501cancel">   
+			<result type="json"/>
+			</action>
+		
+		
+		<action name="saveSum" method="detailPSC0501saves" class="dao.XBRLPSC0501Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		    		  
+          <!-- ***************************************** END OF PSC0501 ******************************** -->
+		    		  
+		    		  
+		    		  
+		    
+		    		  <!--******************************* START OF PSC0106 **********************-->
+		    
+		        
+          <action name="savecheckpsc0106" method="detailPSC0106savecheck" class="dao.XBRLPSC0106Dao">
+		<result type="json" />
+		</action>
+		    
+		    <action name="PSC0106chckmodified" class="dao.XBRLPSC0106Dao" method="PSC0106chckmodified">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0106verify" class="action.XBRLPSC0106Action" method="PSC0106verify">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0106vermaster" class="action.XBRLPSC0106Action" method="PSC0106vermaster">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="PSC0106cancel" class="dao.XBRLPSC0106Dao" method="modPSC0106cancel">   
+			<result type="json"/>
+			</action>
+		
+		    
+        <!--************************* START PSC0102 *******************-->
+     
+        
+          <action name="savecheckpsc0102" method="detailPSC0102savecheck" class="dao.XBRLPSC0102Dao">
+		<result type="json" />
+		</action>
+		
+		<action name="PSC0102chckmodified" class="dao.XBRLPSC0102Dao" method="PSC0102chckmodified">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0102verify" class="action.XBRLPSC0102Action" method="PSC0102verify">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0102vermaster" class="action.XBRLPSC0102Action" method="PSC0102vermaster">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0102cancel" class="dao.XBRLPSC0102Dao" method="modPSC0102cancel">   
+			<result type="json"/>
+			</action>
+			
+			 <action name="saveSumbls1" method="detailPSC0102saves" class="dao.XBRLPSC0102Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		  <!--******************************* END OF PSC0102 **********************)-->
+			
+			
+
+        <!--************************* START FIM0400 *******************-->
+        
+         <action name="savecheckfim0400" method="detailFIM0400savecheck" class="dao.XBRLFIM0400Dao">
+		<result type="json" />
+		</action>
+		
+		<action name="FIM0400chckmodified" class="dao.XBRLFIM0400Dao" method="FIM0400chckmodified">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0400verify" class="action.XBRLFIM0400Action" method="FIM0400verify">
+			<result type="json" />
+		</action>
+	
+        <action name="FIM0400vermaster" class="action.XBRLFIM0400Action" method="FIM0400vermaster">
+			<result type="json" />
+		</action>
+		
+		<action name="FIM0400cancel" class="dao.XBRLFIM0400Dao" method="modFIM0400cancel">   
+			<result type="json"/>
+			</action>
+			
+			<action name="saveSumbls1" method="detailFIM0400saves" class="dao.XBRLFIM0400Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="XMLDOWNLOADp" class="reports.XMLDOWNLOAD" method="fim0400">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+        
+<!--******************************* END OF FIM0400 **********************)-->
+
+		<!-- ************************************ START BLS0106REPOPRT *********************************** -->
+<action name="XMLDOWNLOADbls106" class="reports.XMLDOWNLOAD" method="blsxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="bls0106criteria" class="dao.CriteriaDao" method="BLS0106criteriaCheck">
+			<result type="json" />
+		</action>
+
+
+
+		<action name="BLS0106SUM" method="summaryBLS0106detail" class="action.XBRLBLS0106Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="blsdetails" method="detailBLS0106" class="action.XBRLBLS0106Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="BLS0106" class="action.XBRLBLS0106Action" method="modXbBLSCreate106">
+			<result type="json" />
+		</action>
+
+		<action name="saveSumbls106" method="detailBLS0106saves" class="dao.XBRLBLS0106Dao"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> </action> 
+
+		<action name="BLS0106EXCELSum" class="reports.XBRLBLS0106ActionSumXL"
+			method="BLS0106EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+   
+    <action name="BLS0106PDFREPORT" class="reportsPDF.XBRLBLS0106ActionPDF"
+			method="BLS0106PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+	   <action name="BLS0106EXCELREPORT" class="reports.XBRLBLS0106ActionXL"
+			method="BLS0106EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		<!-- ************************************ END BLS0106 REPORT *********************************** -->
+
+
+		<!-- FIM0500 -->
+		
+		 <action name="druploadFilefim500" class="action.BulkUploadFim0500Action"
+			method="fim0500Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilefim500" class="action.BulkUploadFim0500Action"
+			method="fim0500Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		<action name="fim500details" method="detailFIM0500" class="action.XBRLFIM0500Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+<action name="FIM0500" class="action.XBRLFIM0500Action" method="modXbFIMCreate500">
+			<result type="json"/>
+			</action>
+			
+<action name="FIM0500criteria" class="dao.CriteriaDao" method="FIM0500criteriaCheck">
+			<result type="json"/>
+			</action>
+<action name="FIM0500SUM" method="sumFIM0500detail" class="action.XBRLFIM0500Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+<action name="FIM0500SUM1" method="summaryFIM0500detail" class="action.XBRLFIM0500Action">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+ 
+
+<action name="FIM0500EXCELREPORT" class="reports.XBRLFIM0500ActionXL" method="FIM0500EXCEL">
+<result name="success" type="stream">
+<param name="contentType">application/octet-stream</param>
+<param name="inputName">inputStream</param>
+<param name="contentDisposition">attachment;filename="${fileName}"</param>
+<param name="bufferSize">4096</param>
+</result> 
+</action>	
+
+
+	
+		<action name="FIM0500EXCELSum" class="reports.XBRLFIM0500ActionSumXL"
+			method="FIM0500EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		 <action name="FIM0500PDFREPORT" class="reportsPDF.XBRLFIM0500ActionPDF"
+			method="FIM0500PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+
+
+		<!-- END FIM0500 -->
+		<!-- ************************************ START FIM0300 REPOPRT *********************************** -->
+ <action name="savecheckFIM0300" method="detailFIM0300savecheck" class="dao.XBRLFIM0300Dao">
+		<result type="json" />
+		</action>
+		 <action name="saveSumFIM0300" method="detailFIM0300saves" class="dao.XBRLFIM0300Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="FIM0300criteria" class="dao.CriteriaDao" method="FIM0300criteriaCheck">
+			<result type="json" />
+		</action>
+
+<action name="druploadFilefim300" class="action.BulkUploadFim0300Action"
+			method="fim0300Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilefim300" class="action.BulkUploadFim0300Action"
+			method="fim0300Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		<action name="FIM0300SUM" method="detailFIM0300" class="action.XBRLFIM0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+<action name="FIM0300verify" class="action.XBRLFIM0300Action" method="FIM0300verify">
+			<result type="json" />
+		</action>
+		
+
+		<action name="fim0300details" method="detailFIM0300" class="action.XBRLFIM0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+ <action name="FIM0300chckmodified" class="dao.XBRLFIM0300Dao" method="FIM0300chckmodified">
+			<result type="json" />
+		</action>
+
+<action name="FIM0300EXCELSum" class="reports.XBRLFIM0300ActionSumXL"
+			method="FIM0300EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="FIM0300PDFREPORT" class="reportsPDF.XBRLFIM0300ActionPDF"
+			method="FIM0300PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+
+<action name="FIM0300EXCELREPORT" class="reports.XBRLFIM0300ActionXL"
+			method="FIM0300EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+		<action name="FIM0300" class="action.XBRLFIM0300Action" method="modXbFIM3Create">
+			<result type="json" />
+		</action>
+
+<action name="FIM0300cancel" class="dao.XBRLFIM0300Dao" method="modFIM0300cancel">   
+			<result type="json"/>
+			</action>
+
+<action name="FIM0300vermaster" class="action.XBRLFIM0300Action" method="FIM0300vermaster">
+			<result type="json" />
+		</action>
+
+
+		<!-- <action name="saveSum" method="detailFIM0300saves" class="dao.XBRLFIM0300Dao"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> </action> -->
+
+
+		<!-- Excel Report -->
+
+		<!-- <action name="bls0106EXCELREPORT" class="reports.XBRLBLS0106ActionXL" 
+			method="bls0106EXCEL"> <result name="success" type="stream"> <param name="contentType">application/octet-stream</param> 
+			<param name="inputName">inputStream</param> <param name="contentDisposition">attachment;filename="${fileName}"</param> 
+			<param name="bufferSize">4096</param> </result> </action> -->
+
+
+		<!-- <action name="bls0106EXCELSum" class="reports.XBRLBLS0106ActionSumXL" 
+			method="bls0106EXCELSums"> <result name="success" type="stream"> <param name="contentType">application/octet-stream</param> 
+			<param name="inputName">inputStream</param> <param name="contentDisposition">attachment;filename="${fileName}"</param> 
+			<param name="bufferSize">4096</param> </result> </action> -->
+
+		<!-- ************************************ END FIM0300 REPORT *********************************** -->
+		<!-- ************************************ START FIM0900 REPOPRT *********************************** -->
+
+                                          
+                         	
+		<action name="XMLDOWNLOADf9" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	
+	
+     <action name="saveSumf9" method="detailFIM0900saves" class="dao.XBRLFIM0900Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+           <action name="FIM0900EXCELREPORT" class="reports.XBRLFIM0900ActionXL"
+			method="FIM0900EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>                                             
+                                          
+                                          
+         <action name="FIM0900criteria" class="dao.CriteriaDao" method="FIM0900criteriaCheck">
+			<result type="json" />
+		</action> 
+		
+		<action name="FIM0900sec1" method="summary1FIM0900detail" class="action.XBRLFIM0900Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+              
+        <action name="fim0900details" method="detailFIM0900" class="action.XBRLFIM0900Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>   
+		
+		<action name="FIM0900" class="action.XBRLFIM0900Action" method="modXbFIMCreate900">   
+			<result type="json"/>
+			</action> 
+		 <action name="FIM0900EXCELSum" class="reports.XBRLFIM0900ActionSumXL"
+			method="FIM0900EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="FIM0900PDFREPORT" class="reportsPDF.XBRLFIM0900ActionPDF"
+			method="FIM0900PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>   
+
+		<!-- ************************************ END FIM0900 REPORT *********************************** -->
+
+<!--  ===================PSC0500============================-->
+
+
+<action name="PSC0500criteria" class="dao.CriteriaDao" method="PSC0500criteriaCheck">
+<result type="json" />
+</action>
+
+<action name="PSC0500details" method="detailpsc0500" class="action.XBRLPSC0500Action">
+<interceptor-ref name="defaultStack1" />
+<result type="json" />
+</action>
+<action name="PSC0500chckmodified" class="dao.XBRLPSC0500Dao" method="PSC0500chckmodified">
+			<result type="json" />
+		</action>
+<action name="savecheckPSC0500" method="detailPSC0500savecheck" class="dao.XBRLPSC0500Dao">
+
+<result type="json" />
+</action>
+
+<action name="PSC0500SUM" method="summarypsc0500detail" class="action.XBRLPSC0500Action">
+<interceptor-ref name="defaultStack1" />
+<result type="json" />
+</action>
+<action name="PSC0500SUM1" method="sumpsc0500detail" class="action.XBRLPSC0500Action">
+<interceptor-ref name="defaultStack1" />
+<result type="json" />
+</action>
+<action name="PSC0500" class="action.XBRLPSC0500Action" method="modXbPSCCreate0500">   
+<result type="json"/>
+</action>
+
+<action name="PSC0500EXCELREPORT" class="reports.XBRLPSC0500ActionXL"
+			method="PSC0500EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+<!-- #####################PSC0500 ends################# -->
+
+
+<!-- ************************PSC0501 starts*************************** -->
+		<action name="psc0501details" method="detailPSC0501" class="action.XBRLPSC0501Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="PSC0501SUM" method="sumPSC0501" class="action.XBRLPSC0501Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+<action name="PSC0501" class="action.XBRLPSC0501Action" method="modXbPSCCreate501">
+			<result type="json" />
+		</action>
+		 
+		<action name="PSC0501criteria" class="dao.CriteriaDao" method="PSC0501criteriaCheck">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="PSC0501EXCELREPORT" class="reports.XBRLPSC0501ActionXL"
+			method="PSC0501EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 			<!-- ************************PSC0501 ends*************************** -->
+
+		<!-- FIM1000 -->
+		
+		<action name="XMLDOWNLOADf10" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	
+	<action name="druploadFilefim1000" class="action.BulkUploadFim1000Action"
+			method="fim1000Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilefim1000" class="action.BulkUploadFim1000Action"
+			method="fim1000Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+	
+	
+	
+     <action name="saveSumf10" method="detailFIM1000saves" class="dao.XBRLFIM1000Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="FIM1000" class="action.XBRLFIM1000Action" method="modXbFIMCreate1000">
+			<result type="json" />
+		</action>
+
+
+		<action name="FIM1000AC" class="action.XBRLFIM1000Action"
+			method="modXbFIMCreate1000">
+			<result type="json" />
+		</action>
+		<action name="FIM1000criteria" class="dao.CriteriaDao" method="FIM1000criteriaCheck">
+			<result type="json" />
+		</action>
+
+		<action name="FIM1000EXCELREPORT" class="reports.XBRLFIM1000ActionXL"
+			method="FIM1000EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+<action name="FIM1000EXCELSum" class="reports.XBRLFIM1000ActionSumXL"
+			method="FIM1000EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+             	
+		
+		
+		
+	 <action name="FIM1000PDFREPORT" class="reportsPDF.XBRLFIM1000ActionPDF"
+			method="FIM1000PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>   
+		 
+
+		<action name="FIM1000SUM1" method="sum1FIM1000detail" class="action.XBRLFIM1000Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+
+		<action name="FIM1000SUM" method="summaryFIM1000detail" class="action.XBRLFIM1000Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="fim1000details" method="detailFIM1000" class="action.XBRLFIM1000Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<!-- END FIM1000 -->
+
+
+
+
+
+		<!-- BLS0700 -->
+		<action name="BLS0700criteria" class="dao.CriteriaDao" method="BLS0700criteriaCheck">
+			<result type="json" />
+		</action>
+
+
+		<action name="BLS0700" class="action.XBRLBLS0700Action" method="modXbBLSCreate700">
+			<result type="json" />
+		</action>
+
+		<action name="BLS0700SUM" method="summaryBLS0700detail" class="action.XBRLBLS0700Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="BLS0700details" method="detailBLS0700" class="action.XBRLBLS0700Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+<action name="BLS0700EXCELREPORT" class="reports.XBRLBLS0700ActionXL"
+			method="BLS0700EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="XMLDOWNLOADb7" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	
+	
+     <action name="saveSumb7" method="detailBLS0700saves" class="dao.XBRLBLS0700Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<!-- END BLS0700 -->
+
+
+
+		<!-- USER PROFILE -->
+
+	 	<action name="useradd" class="action.XBRLUserProfileAction"
+			method="addUser">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+			<result name="error">/jsp/XBRL_ResultAlert.jsp</result>
+
+		</action>
+		<action name="modifyUser" class="action.XBRLUserProfileAction"
+			method="modifyUser">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+			<result name="error">/jsp/XBRL_ResultAlert.jsp</result>
+
+		</action>
+		<action name="userDetails" class="action.XBRLUserProfileAction"
+			method="inqDetails">
+
+			<result type="json" />
+		</action> 
+		<!-- END OF USER PROFILE -->
+
+
+		<!-- SUP1300 -->
+		<action name="SUP1300criteria" class="dao.CriteriaDao" method="SUP1300criteriaCheck">
+			<result type="json" />
+		</action>
+
+
+		<action name="SUP1300m" class="action.XBRLSUP1300Action"
+			method="modXbSUP1300">
+			<result type="json" />
+		</action>
+		<action name="SUP1300SUM" method="summarySUP1300detail" class="action.XBRLSUP1300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="SUP13details" method="detailSUP1300" class="action.XBRLSUP1300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="druploadFilesup1300" class="action.BulkUploadSup1300Action"
+			method="sup1300Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilesup1300" class="action.BulkUploadSup1300Action"
+			method="sup1300Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+
+<action name="XMLDOWNLOADs13" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	
+	
+     <action name="saveSums13" method="detailSUP1300saves" class="dao.XBRLSUP1300Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		 <action name="SUP1300" class="action.XBRLSUP1300Action" method="modXbSUPCreate1300">
+			<result type="json" />
+		</action>
+		
+ <action name="SUP1300EXCELREPORT" class="reports.XBRLSUP1300ActionXL"
+			method="SUP1300EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>                                           
+                    <action name="SUP1300EXCELSum" class="reports.XBRLSUP1300ActionSumXL"
+			method="SUP1300EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="SUP1300PDFREPORT" class="reportsPDF.XBRLSUP1300ActionPDF"
+			method="SUP1300PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		<!-- END OF SUP1300 -->
+        <!-- ***********start sup1400 struts************** -->
+
+<action name="druploadFilesup1400" class="action.BulkUploadSup1400Action"
+			method="sup1400Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilesup1400" class="action.BulkUploadSup1400Action"
+			method="sup1400Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		
+
+
+
+<action name="SUP1400criteria" class="dao.CriteriaDao" method="SUP1400criteriaCheck">
+<result type="json"/>
+</action>
+   
+<action name="SUP1400sec1"  class="action.XBRLSUP1400Action" method="section1SUP1400">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+ 
+<action name="SUP1400details"  class="action.XBRLSUP1400Action" method="detSUP1400">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>     
+<action name="SUP1400" class="action.XBRLSUP1400Action" method="modXbSUPCreate1400">
+			<result type="json" />
+		</action>
+  <action name="SUP1400EXCELREPORT" class="reports.XBRLSUP1400ActionXL"
+			method="SUP1400EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>              
+ <action name="SUP1400EXCELSum" class="reports.XBRLSUP1400ActionSumXL"
+			method="SUP1400EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="SUP1400PDFREPORT" class="reportsPDF.XBRLSUP1400ActionPDF"
+			method="SUP1400PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+		
+			<action name="saveSum14" method="detailSUP1400saves" class="dao.XBRLSUP1400Dao"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> 
+			
+			</action> 
+			
+			
+			
+			 <action name="XMLDOWNLOADb14" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+                     <!--  ***************sup1400 struts end***************** -->
+<!--  ************************* START  of BOP0100  ************************* -->
+   
+  <action name="BOP0100criteria" class="dao.CriteriaDao" method="BOP0100criteriaCheck">
+<result type="json"/>
+</action>
+   
+<action name="BOP0100sec1"  class="action.XBRLBOP0100Action" method="section1BOP0100">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+ 
+<action name="BOP0100details"  class="action.XBRLBOP0100Action" method="detBOP0100">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>     
+<action name="BOP0100" class="action.XBRLBOP0100Action" method="modXbBOPCreate100">
+			<result type="json" />
+		</action>
+ 	
+			 <action name="BOP0100EXCELREPORT" class="reports.XBRLBOP0100ActionXL"
+			method="BOP0100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		
+		<action name="XMLDOWNLOADb100" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		
+     <action name="saveSumb100" method="detailBOP0100saves" class="dao.XBRLBOP0100Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action> 
+     <!--  ************************* END  of BOP0100   ************************* -->
+		<!-- ************************************ START SUP1100 REPOPRT *********************************** -->
+
+		<action name="SUP1100criteria" class="dao.CriteriaDao" method="SUP1100criteriaCheck">
+			<result type="json" />
+		</action>
+
+
+		<action name="SUP1100SUM" method="summarySUP1100detail" class="action.XBRLSUP1100Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		 <action name="sup1100details" method="detailSUP1100" class="action.XBRLSUP1100Action"> 
+			<interceptor-ref name="defaultStack1"/> 
+			<result type="json"/> </action> 
+			
+			
+			<action name="SUP1100" class="action.XBRLSUP1100Action" method="modXbSUPCreate1100">
+			<result type="json" />
+		</action>
+		
+		<action name="druploadFilesup1100" class="action.BulkUploadSup1100Action"
+			method="sup1100Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilesup1100" class="action.BulkUploadSup1100Action"
+			method="sup1100Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		
+		
+		<action name="SUP1100EXCELREPORT" class="reports.XBRLSUP1100ActionXL"
+			method="SUP1100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<!-- ************************************ END SUP1100 REPORT *********************************** -->
+
+
+
+		<!-- ************************************ START SUP1500 REPOPRT *********************************** -->
+
+		<action name="druploadFilesup1500" class="action.BulkUploadSup1500Action"
+			method="sup1500Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilesup1500" class="action.BulkUploadSup1500Action"
+			method="sup1500Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		
+		<action name="SUP1500criteria" class="dao.CriteriaDao" method="SUP1500criteriaCheck">
+			<result type="json" />
+		</action>
+
+
+		<action name="SUP1500SUM" method="summarySUP1500detail" class="action.XBRLSUP1500Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+<action name="sup1500details" method="detailSUP1500" class="action.XBRLSUP1500Action"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> </action>
+
+		<action name="SUP1500" class="action.XBRLSUP1500Action" method="modXbSUPCreate1500">
+			<result type="json" />
+		</action>
+<action name="XMLDOWNLOADs15" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		
+     <action name="saveSums15" method="detail3SUP1500saves" class="dao.XBRLSUP1500Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+			<action name="SUP1500EXCELREPORT" class="reports.XBRLSUP1500ActionXL"
+			method="SUP1500EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+
+		<!-- Excel Report -->
+
+		<!-- <action name="bls0106EXCELREPORT" class="reports.XBRLBLS0106ActionXL" 
+			method="bls0106EXCEL"> <result name="success" type="stream"> <param name="contentType">application/octet-stream</param> 
+			<param name="inputName">inputStream</param> <param name="contentDisposition">attachment;filename="${fileName}"</param> 
+			<param name="bufferSize">4096</param> </result> </action> -->
+
+
+		<!-- <action name="bls0106EXCELSum" class="reports.XBRLBLS0106ActionSumXL" 
+			method="bls0106EXCELSums"> <result name="success" type="stream"> <param name="contentType">application/octet-stream</param> 
+			<param name="inputName">inputStream</param> <param name="contentDisposition">attachment;filename="${fileName}"</param> 
+			<param name="bufferSize">4096</param> </result> </action> -->
+
+		<!-- ************************************ END SUP1500 REPORT *********************************** -->
+
+		<!-- ************************************ START FIM0400 REPOPRT *********************************** -->
+ <action name="druploadFilefim400" class="action.BulkUploadFim0400Action"
+			method="fim0400Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilefim400" class="action.BulkUploadFim0400Action"
+			method="fim0400Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		<action name="FIM0400criteria" class="dao.CriteriaDao" method="FIM0400criteriaCheck">
+			<result type="json" />
+		</action>
+
+	<action name="FIM0400" class="action.XBRLFIM0400Action" method="modXbFIMCreate400">
+			<result type="json" />
+		</action>
+		<action name="FIM0400SUM" method="summaryFIM0400detail" class="action.XBRLFIM0400Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+		<action name="fim0400details" method="detailFIM0400"
+			class="action.XBRLFIM0400Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+	
+	<action name="FIM0400EXCELREPORT" class="reports.XBRLFIM0400ActionXL"
+			method="FIM0400EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<!-- <action name="saveSum" method="detailFIM0400saves" class="dao.XBRLFIM0400Dao"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> </action> -->
+
+
+			
+		<action name="FIM0400EXCELSum" class="reports.XBRLFIM0400ActionSumXL"
+			method="FIM0400EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="FIM0400PDFREPORT" class="reportsPDF.XBRLFIM0400ActionPDF"
+			method="FIM0400PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		<!-- ************************************ END FIM0400 REPORT *********************************** -->
+
+		<!-- UPLOAD FILES -->
+
+		<action name="reportupload" class="dao.XBRLReportMasterDao"
+			method="repupload">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+<action name="repdate" class="action.XBRLPYM0100ArchivalAction"
+			method="repdate">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+
+		
+		<!-- psc0102 -->
+	 <!-- <action name="saveSump2" method="detailPSC0102saves" class="dao.XBRLPSC0102Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>  -->
+
+		<action name="PSC0102criteria" class="dao.CriteriaDao" method="PSC0102criteriaCheck">
+			<result type="json" />
+		</action>
+
+		<action name="PSC0102details" method="detailpsc0102" class="action.XBRLPSC0102Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="PSC0102SUM" method="summarypsc0102detail" class="action.XBRLPSC0102Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="PSC0102SUM1" method="sumpsc0102detail" class="action.XBRLPSC0102Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+	<action name="PSC0102" class="action.XBRLPSC0102Action" method="modXbPSCCreate0102">   
+			<result type="json"/>
+			</action>
+			
+		
+		<action name="PSC0102EXCELSum" class="reports.XBRLPSC0102ActionSumXL"
+			method="PSC0102EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             
+		
+		
+		
+	 <action name="PSC0102PDFREPORT" class="reportsPDF.XBRLPSC0102ActionPDF"
+			method="PSC0102PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+ <action name="PSC0102EXCELREPORT" class="reports.XBRLPSC0102ActionXL"
+			method="PSC0102EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="XMLDOWNLOADp1" class="reports.XMLDOWNLOAD" method="blsxml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<!--psc0102 END -->
+
+		
+
+		
+		<!-- psc0300 -->
+	 <action name="PSC0300chckmodified" class="dao.XBRLPSC0300Dao" method="PSC0300chckmodified">
+			<result type="json" />
+		</action>
+
+
+<action name="psc0300verify" class="action.XBRLPSC0300Action" method="psc0300verify">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0300vermaster" class="action.XBRLPSC0300Action" method="PSC0300vermaster">
+			<result type="json" />
+		</action>
+			<action name="PSC0300cancel" class="dao.XBRLPSC0300Dao" method="modPSC0300cancel">   
+			<result type="json"/>
+			</action>
+		
+		
+		<action name="savecheckPSC" method="detailPSC0300savecheck" class="dao.XBRLPSC0300Dao">
+
+<result type="json" />
+</action>
+		<action name="saveSump30" method="detailPSC0300saves" class="dao.XBRLPSC0300Dao">
+ 			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+			</action>
+		
+  <action name="PSC0300EXCELSum" class="reports.XBRLPSC0300ActionSumXL"
+			method="PSC0300EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+
+		<action name="PSC0300criteria" class="dao.CriteriaDao" method="PSC0300criteriaCheck">
+			<result type="json" />
+		</action>
+
+		<action name="PSC0300details" method="detailpsc0300" class="action.XBRLPSC0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="PSC0300SUM" method="summarypsc0300detail" class="action.XBRLPSC0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="PSC0300SUM1" method="sumpsc0300detail" class="action.XBRLPSC0300Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<action name="PSC0300" class="action.XBRLPSC0300Action" method="modXbPSCCreate300">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="PSC0300EXCELREPORT" class="reports.XBRLPSC0300ActionXL"
+			method="PSC0300EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		
+		
+		
+	 <action name="PSC0300PDFREPORT" class="reportsPDF.XBRLPSC0300ActionPDF"
+			method="PSC0300PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+		<!--END -->
+
+		
+           
+
+              <!-- *********************SUP1200******************************** -->
+<action name="SUP1200criteria" class="dao.CriteriaDao" method="SUP1200criteriaCheck">
+<result type="json"/>
+</action>
+
+<action name="SUP1200sec1"  class="action.XBRLSUP1200Action" method="section1SUP1200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="SUP1200sec2"  class="action.XBRLSUP1200Action" method="section2SUP1200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="SUP1200sec3"  class="action.XBRLSUP1200Action" method="section3SUP1200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="SUP1200sec4"  class="action.XBRLSUP1200Action" method="section4SUP1200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+              <action name="SUP1200det1"  class="action.XBRLSUP1200Action" method="detsec1SUP1200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+              <action name="SUP1200det2"  class="action.XBRLSUP1200Action" method="detsec2SUP1200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+              <action name="SUP1200dt1" class="action.XBRLSUP1200Action" method="modXbSUPCreate12001">
+			<result type="json" />
+		</action>
+		
+             <action name="SUP1200dt2" class="action.XBRLSUP1200Action" method="modXbSUPCreate1200">
+			<result type="json" />
+		</action>
+		
+		<action name="XMLDOWNLOADs12" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	
+	
+     <action name="saveSums12" method="detailSUP1200saves" class="dao.XBRLSUP1200Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		   <action name="SUP1200EXCELREPORT" class="reports.XBRLSUP1200ActionXL"
+			method="SUP1200EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>                                             
+                    
+            <action name="SUP1200EXCELSum" class="reports.XBRLSUP1200ActionSumXL"
+			method="SUP1200EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="SUP1200PDFREPORT" class="reportsPDF.XBRLSUP1200ActionPDF"
+			method="SUP1200PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>   
+		
+		
+			
+	 
+		
+		<!-- *********************SUP1200 END******************************** -->
+		
+	<!-- sup0900 -->
+	<action name="XMLDOWNLOADs9" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	
+	
+     <action name="saveSums9" method="detailSUP0900saves" class="dao.XBRLSUP0900Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+                                                    
+         <action name="SUP0900criteria" class="dao.CriteriaDao" method="SUP0900criteriaCheck">
+			<result type="json" />
+		</action> 
+		
+		<action name="SUP0900sec1" method="summarySUP0900detail" class="action.XBRLSUP0900Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+              
+        <action name="sup0900details" method="detailSUP0900" class="action.XBRLSUP0900Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>   
+		
+		<action name="SUP0900" class="action.XBRLSUP0900Action" method="modXbSUPCreate900">   
+			<result type="json"/>
+			</action>
+			
+			 <action name="SUP0900EXCELREPORT" class="reports.XBRLSUP0900ActionXL"
+			method="SUP0900EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>   
+		
+		
+			<action name="SUP0900EXCELSum" class="reports.XBRLSUP0900ActionSumXL"
+			method="SUP0900EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="SUP0900PDFREPORT" class="reportsPDF.XBRLSUP0900ActionPDF"
+			method="SUP0900PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		 
+                                              <!-- sup0900 -->
+
+		<!-- *********************SUP0500******************************** -->
+
+
+
+		<action name="SUP0500criteria" class="dao.CriteriaDao" method="SUP0500criteriaCheck">
+			<result type="json" />
+		</action>
+
+		<action name="SUP0500sec1" class="action.XBRLSUP0500Action"
+			method="section1SUP0500">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP0500sec2" class="action.XBRLSUP0500Action"
+			method="section2SUP0500">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP0500sec3" class="action.XBRLSUP0500Action"
+			method="section3SUP0500">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP0500sec4" class="action.XBRLSUP0500Action"
+			method="section4SUP0500">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP0500det1" class="action.XBRLSUP0500Action"
+			method="detsec1SUP0500">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+        <action name="SUP0500" class="action.XBRLSUP0500Action" method="modXbSUPCreate500">
+			<result type="json" />
+		</action>
+		
+		
+        <action name="SUP0500EXCELREPORT" class="reports.XBRLSUP0500ActionXL"
+             method="SUP0500EXCEL">
+       <result name="success" type="stream">
+         <param name="contentType">application/octet-stream</param>
+         <param name="inputName">inputStream</param>
+         <param name="contentDisposition">attachment;filename="${fileName}"</param>
+         <param name="bufferSize">4096</param>
+         </result>
+         </action> 
+
+	<action name="XMLDOWNLOADs5" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		
+     <action name="saveSums5" method="detailSUP0500saves" class="dao.XBRLSUP0500Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action> 
+		<!-- *********************SUP0500 END******************************** -->
+
+		<!-- ************************************ START BOP0202 REPOPRT *********************************** -->
+
+
+		<action name="BOP0202criteria" class="dao.CriteriaDao" method="BOP0202criteriaCheck">
+			<result type="json" />
+		</action>
+		
+		<action name="BOP0202SUM" method="sum1BOP0202" class="action.XBRLBOP0202Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<action name="BOP0202details" method="detailBOP0202" class="action.XBRLBOP0202Action">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<action name="BOP0202" class="action.XBRLBOP0202Action" method="modXbBOPCreate202">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="BOP0202EXCELREPORT" class="reports.XBRLBOP0202ActionXL"
+			method="BOP0202EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+			<action name="XMLDOWNLOADb202" class="reports.XMLDOWNLOAD" method="pymxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		
+     <action name="saveSumb202" method="detailBOP0202saves" class="dao.XBRLBOP0202Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action> 
+	<!-- ************************************ END BOP0202 REPORT *********************************** -->
+
+
+		
+		<!-- *********************SUP1000******************************** -->
+		<action name="SUP1000criteria" class="dao.CriteriaDao" method="SUP1000criteriaCheck">
+			<result type="json" />
+		</action>
+
+		<action name="SUP1000sec1" class="action.XBRLSUP1000Action"
+			method="section1SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP1000sec2" class="action.XBRLSUP1000Action"
+			method="section2SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP1000sec3" class="action.XBRLSUP1000Action"
+			method="section3SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP1000sec4" class="action.XBRLSUP1000Action"
+			method="section4SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+		<action name="SUP1000det1" class="action.XBRLSUP1000Action"
+			method="detsec1SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		<action name="SUP1000det2" class="action.XBRLSUP1000Action"
+			method="detsec2SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="SUP1000det3" class="action.XBRLSUP1000Action"
+			method="detsec3SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<action name="SUP1000det4" class="action.XBRLSUP1000Action"
+			method="detsec4SUP1000">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+	<action name="SUP1000" class="action.XBRLSUP1000Action" method="modXbSUPCreate1000">
+			<result type="json" />
+		</action>
+<action name="SUP1000d34" class="action.XBRLSUP1000Action" method="modXbSUPCreate1000d34">
+			<result type="json" />
+		</action>
+		
+		
+		
+		
+			<action name="SUP1000EXCELREPORT" class="reports.XBRLSUP1000ActionXL"
+			method="SUP1000EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		
+		<!-- *********************SUP1000 END******************************** -->
+		
+	<!-- 	*********************REPORT CODE MAINTENANCE UPDATE *************************-->
+<action name="refcodemod" class="action.XBRL_REF_CODEMAINTAction"
+			method="refcodeupdate">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+			<result name="error">/jsp/XBRL_ResultAlert.jsp</result>
+
+		</action>
+		
+		
+		
+		<action name="reportdet"  class="action.XBRL_REPREF_MAPPINGAction" method="repdet">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             	<action name="repupdate"  class="action.XBRL_REPREF_MAPPINGAction" method="repupdate">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+		<action name="reportupdate" class="action.XBRL_REPREF_MAPPINGAction"
+			method="repcodeupdate">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+			<result name="error">/jsp/XBRL_ResultAlert.jsp</result>
+
+		</action>
+		
+		<action name="entitydet"  class="action.XBRL_REPREF_MAPPINGAction" method="entitydet">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="actvali"  class="action.XBRL_REPREF_MAPPINGAction" method="actvali">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="custvali"  class="action.XBRL_REPREF_MAPPINGAction" method="custvali">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="upcount"  class="action.XBRL_REPREF_MAPPINGAction" method="upcount">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+		 <!-- **************************FIM0600*******************************************-->
+<action name="FIM0600criteria" class="dao.CriteriaDao" method="FIM0600criteriaCheck">
+<result type="json"/>
+</action>
+ <action name="saveSumfim" method="detailFIM0600saves" class="dao.XBRLFIM0600Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+	 <action name="FIM0600EXCELREPORT" class="reports.XBRLFIM0600ActionXL"
+			method="FIM0600EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+<action name="FIM0600EXCELSum" class="reports.XBRLFIM0600ActionSumXL"
+			method="FIM0600EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+	<action name="FIM0600PDFREPORT" class="reportsPDF.XBRLFIM0600ActionPDF"
+			method="FIM0600PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		<action name="XMLDOWNLOADf6" class="reports.XMLDOWNLOAD" method="blsxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+<action name="fim0600sec1"  class="action.XBRLFIM0600Action" method="section1FIM0600">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="fim0600sec2"  class="action.XBRLFIM0600Action" method="section2FIM0600">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="fim0600sec3"  class="action.XBRLFIM0600Action" method="section3FIM0600">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="fim0600details"  class="action.XBRLFIM0600Action" method="detailsFIM0600">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+               <action name="fim0600details2"  class="action.XBRLFIM0600Action" method="details2FIM0600">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+              <action name="fim0600details3"  class="action.XBRLFIM0600Action" method="details3FIM0600">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+               <action name="FIM06001" class="action.XBRLFIM0600Action" method="modXbfimCreate6001">
+			<result type="json" />
+		</action>
+		
+             <action name="FIM0600" class="action.XBRLFIM0600Action" method="modXbfimCreate600">
+			<result type="json" />
+		</action>
+  
+  <!-- **************************SUP0400 *******************************************-->
+
+
+ <action name="SUP0400chckmodified" class="dao.XBRLSUP0400Dao" method="SUP0400chckmodified">
+			<result type="json" />
+		</action>
+ 
+
+<action name="SUP0400criteria" class="dao.CriteriaDao" method="SUP0400criteriaCheck">
+<result type="json"/>
+</action>
+<action name="savecheckSUP0400" method="detailSUP0400savecheck" class="dao.XBRLSUP0400Dao">
+		<result type="json" />
+		</action>
+		
+		 <action name="saveSumSUP0400" method="detailSUP0400saves" class="dao.XBRLSUP0400Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+ <action name="sup0400sec1"  class="action.XBRLSUP0400Action" method="section1SUP0400">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="sup0400sec2"  class="action.XBRLSUP0400Action" method="section2SUP0400">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+              <action name="sup0400sec3"  class="action.XBRLSUP0400Action" method="section3SUP0400">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+              <action name="sup0400details"  class="action.XBRLSUP0400Action" method="detailsSUP0400">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+   
+   	
+<action name="SUP0400" class="action.XBRLSUP0400Action" method="modXbSUPCreate400">
+<result type="json" />
+</action>
+<action name="SUP0400cancel" class="dao.XBRLSUP0400Dao" method="modSUP0400cancel">   
+			<result type="json"/>
+			</action>
+
+<action name="SUP0400EXCELREPORT" class="reports.XBRLSUP0400ActionXL"
+method="SUP0400EXCEL">
+<result name="success" type="stream">
+<param name="contentType">application/octet-stream</param>
+<param name="inputName">inputStream</param>
+<param name="contentDisposition">attachment;filename="${fileName}"</param>
+<param name="bufferSize">4096</param>
+</result>
+</action>
+
+<action name="SUP0400verify" class="action.XBRLSUP0400Action" method="SUP0400verify">
+			<result type="json" />
+		</action>
+		<action name="SUP0400vermaster" class="action.XBRLSUP0400Action" method="SUP0400vermaster">
+			<result type="json" />
+		</action>
+    <!-- *********************SUP0400******************************** -->
+    <!-- *********************PSC0104******************************** -->
+     
+     
+     <action name="PSC0104EXCELSum" class="reports.XBRLPSC0104ActionSumXL"
+			method="PSC0104EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             
+		
+		
+		
+	 <action name="PSC0104PDFREPORT" class="reportsPDF.XBRLPSC0104ActionPDF"
+			method="PSC0104PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		<action name="PSC0104EXCELREPORT1" class="reports.XBRLPSC0104ActionXL"
+			method="PSC0104EXCEL1">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="PSC0104EXCELREPORT2" class="reports.XBRLPSC0104ActionXL"
+			method="PSC0104EXCEL2">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="PSC0104EXCELREPORT3" class="reports.XBRLPSC0104ActionXL"
+			method="PSC0104EXCEL3">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 		  
+ 		  
+<action name="PSC0104criteria" class="dao.CriteriaDao" method="PSC0104criteriaCheck">
+<result type="json"/>
+</action>
+ 
+<action name="PSC0104sec1"  class="action.XBRLPSC0104Action" method="section1PSC0104">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0104sec2"  class="action.XBRLPSC0104Action" method="section2PSC0104">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0104sec3"  class="action.XBRLPSC0104Action" method="section3PSC0104">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+     
+           
+           <action name="PSC0104details1"  class="action.XBRLPSC0104Action" method="detail1PSC0104">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+ <action name="PSC0104details2"  class="action.XBRLPSC0104Action" method="detail2PSC0104">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+ <action name="PSC0104details3"  class="action.XBRLPSC0104Action" method="detail3PSC0104">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+            
+             <action name="PSC0104s1" class="action.XBRLPSC0104Action" method="modXbPSC1Create104">
+			<result type="json" />
+		</action>
+            
+            
+             <action name="PSC0104s2" class="action.XBRLPSC0104Action" method="modXbPSC2Create104">
+			<result type="json" />
+		</action>
+            
+             <action name="PSC0104s3" class="action.XBRLPSC0104Action" method="modXbPSC3Create104">
+			<result type="json" />
+		</action>
+            
+             
+            <!--  ************************* end of PSC0104   ************************* -->
+            
+
+
+
+
+
+
+
+            <!--  ************************* START  of CRR0100   ************************* -->
+            <action name="CRR0100criteria" class="dao.CriteriaDao" method="CRR0100criteriaCheck">
+			<result type="json"/>
+			</action>
+			
+<action name="CRR0100chckmodified" class="dao.XBRLCRR0100Dao" method="CRR0100chckmodified">
+			<result type="json" />
+		</action>
+<action name="savecheckcrr0100" method="detailCRR0100savecheck" class="dao.XBRLCRR0100Dao">
+		<result type="json" />
+		</action>
+		<action name="CRR0100cancel" class="dao.XBRLCRR0100Dao" method="modCRR0100cancel">   
+			<result type="json"/>
+			</action>
+			<action name="CRR0100vermaster" class="action.XBRLCRR0100Action" method="CRR0100vermaster">
+			<result type="json" />
+		</action>
+		<action name="CRR0100vermaster1" class="action.XBRLCRR0100Action" method="CRR0100vermaster1">
+			<result type="json" />
+		</action>
+		 <action name="saveSumcrr" method="detailCRR0100saves" class="dao.XBRLCRR0100Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="CRR0100EXCELREPORT" class="reports.XBRLCRR0100ActionXL"
+			method="CRR0100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="CRR0100EXCELREPORT10" class="reports.XBRLCRR0100ActionXL"
+			method="CRR0100EXCEL10">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+   
+
+	<action name="CRR0100PDFREPORT" class="reportsPDF.XBRLCRR0100ActionPDF"
+			method="CRR0100PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+           <action name="CRR0100EXCELSum" class="reports.XBRLCRR0100ActionSumXL"
+			method="CRR0100EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+	
+			
+		<action name="CRR0100sec1"  class="action.XBRLCRR0100Action" method="section1CRR0100">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+           
+             
+             <action name="CRR0100sec10"  class="action.XBRLCRR0100Action" method="section10CRR0100">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+     
+       
+           <action name="CRR0100details"  class="action.XBRLCRR0100Action" method="detailCRR0100">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	
+     <action name="CRR0100details10"  class="action.XBRLCRR0100Action" method="detail10CRR0100">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	
+    <action name="CRR0100" class="action.XBRLCRR0100Action" method="modXbCRRCreate100">
+			<result type="json" />
+		</action>
+     <action name="CRR0100d10" class="action.XBRLCRR0100Action" method="mod10XbCRRCreate100">
+			<result type="json" />
+		</action>
+  
+   
+   
+		<action name="CRR0100criteria" class="dao.CriteriaDao" method="CRR0100criteriaCheck">
+			<result type="json" />
+		</action>
+
+ <action name="CRR0100verify" class="action.XBRLCRR0100Action" method="CRR0100verify">
+			<result type="json" />
+		</action>
+<action name="CRR0100verify1" class="action.XBRLCRR0100Action" method="CRR0100verify1">
+			<result type="json" />
+		</action>
+
+ <!--  ************************* END  of CRR0100   ************************* --> 
+            <!-- *********************PSC0106******************************** -->
+<action name="PSC0106criteria" class="dao.CriteriaDao" method="PSC0106criteriaCheck">
+<result type="json"/>
+</action>
+	<action name="saveSump6" method="detailPSC0106saves" class="dao.XBRLPSC0106Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+
+             
+              <action name="psc0106"  class="action.XBRLPSC0106Action" method="sectionPSC0106">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+              <action name="psc0106details"  class="action.XBRLPSC0106Action" method="PSC0106details">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+              <action name="PSC0106" class="action.XBRLPSC0106Action" method="modXbPSCCreate106">
+			<result type="json" />
+		</action>
+            		
+		<action name="XMLDOWNLOADp6" class="reports.XMLDOWNLOAD" method="p20xml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             <action name="PSC0106EXCELREPORT" class="reports.XBRLPSC0106ActionXL"
+			method="PSC0106EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="PSC0106EXCELSum" class="reports.XBRLPSC0106ActionSumXL"
+			method="PSC0106EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="PSC0106PDFREPORT" class="reportsPDF.XBRLPSC0106ActionPDF"
+			method="PSC0106PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+             <!-- *****************REPORT CODE SET UP****************************** -->
+             
+             <action name="reportcodesetup"  class="action.XBRLReportCodeSetUpAction" method="reportsetUp">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+        
+              <!-- *********************PSC0103******************************** -->
+ <action name="PSC0103chckmodified" class="dao.XBRLPSC0103Dao" method="PSC0103chckmodified">
+			<result type="json" />
+		</action>
+ 
+
+<action name="psc0103verify" class="action.XBRLPSC0103Action" method="psc0103verify">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0103vermaster" class="action.XBRLPSC0103Action" method="PSC0103vermaster">
+			<result type="json" />
+		</action>
+			<action name="PSC0103cancel" class="dao.XBRLPSC0103Dao" method="modPSC0103cancel">   
+			<result type="json"/>
+			</action>
+		
+		<action name="saveSump3" method="detailPSC0103saves" class="dao.XBRLPSC0103Dao">
+ 			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+			</action>
+	 <action name="savecheckPSC3" method="detailPSC0103savecheck" class="dao.XBRLPSC0103Dao">
+
+<result type="json" />
+</action> 
+   	<action name="XMLDOWNLOADp3" class="reports.XMLDOWNLOAD" method="blsxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+            
+		<action name="PSC0103EXCELSum" class="reports.XBRLPSC0103ActionSumXL"
+			method="PSC0103EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             
+		
+		
+		
+	 <action name="PSC0103PDFREPORT" class="reportsPDF.XBRLPSC0103ActionPDF"
+			method="PSC0103PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+   
+		<action name="PSC0103EXCELREPORT" class="reports.XBRLPSC0103ActionXL"
+			method="PSC0103EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+<action name="PSC0103criteria" class="dao.CriteriaDao" method="PSC0103criteriaCheck">
+<result type="json"/>
+</action>
+
+<action name="PSC0103sec1"  class="action.XBRLPSC0103Action" method="section1PSC0103">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0103sec2"  class="action.XBRLPSC0103Action" method="section2PSC0103">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+            
+             
+              <action name="PSC0103det1"  class="action.XBRLPSC0103Action" method="detsec1PSC0103">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0103" class="action.XBRLPSC0103Action" method="modXbPSCCreate103">
+			<result type="json" />
+		</action> 
+			<!-- *********************END PSC0103******************************** -->
+             
+            
+		<!-- ********************* start PSC0200******************************** -->
+ 		  
+ 		  
+ 		  
+		<action name="PSC0200EXCELREPORT" class="reports.XBRLPSC0200ActionXL"
+			method="PSC0200EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+<action name="PSC0200criteria" class="dao.CriteriaDao" method="PSC0200criteriaCheck">
+<result type="json"/>
+</action>
+ <action name="PSC0200chckmodified" class="dao.XBRLPSC0200Dao" method="PSC0200chckmodified">
+			<result type="json" />
+		</action>
+		
+		<action name="savecheckpsc0200" method="detailPSC0200savecheck" class="dao.XBRLPSC0200Dao">
+		<result type="json" />
+		</action>
+		
+             <action name="saveSumPSC0200" method="detailPSC0200saves" class="dao.XBRLPSC0200Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		 
+<action name="psc0200sec1"  class="action.XBRLPSC0200Action" method="section1PSC0200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="psc0200sec2"  class="action.XBRLPSC0200Action" method="section2PSC0200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="psc0200sec3"  class="action.XBRLPSC0200Action" method="section3PSC0200">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+     
+           
+           <action name="psc0200details"  class="action.XBRLPSC0200Action" method="detailPSC0200">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>
+ 
+            
+             <action name="PSC0200" class="action.XBRLPSC0200Action" method="modXbPSCCreate200">
+			<result type="json" />
+		</action>
+		
+             <action name="PSC0200cancel" class="dao.XBRLPSC0200Dao" method="modPSC0200cancel">   
+			<result type="json"/>
+			</action>
+			
+			
+			<action name="PSC0200verify" class="action.XBRLPSC0200Action" method="PSC0200verify">
+			<result type="json" />
+		</action>
+		
+		<action name="PSC0200vermaster" class="action.XBRLPSC0200Action" method="PSC0200vermaster">
+			<result type="json" />
+		</action>	
+            <!--  ************************* end of PSC0200   ************************* -->
+     
+			
+			  <!-- **************************Report code Maintainance*******************************************-->
+             
+             <action name="repcodmain"  class="action.XBRL_REF_CODEMAINTAction" method="repcodmain">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+             <action name="replevel"  class="action.XBRL_REF_CODEMAINTAction" method="replevel">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <!-- **************************Report code Maintainance*******************************************-->
+
+<!-- **************************Report code Details*******************************************-->
+                  
+           <action name="reportdet1"  class="action.XBRL_REPREF_MAPPINGAction" method="repdet1">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>       
+                  
+                 
+                  <!-- **************************Report code Details*******************************************-->
+ <!--  ************************* START  of BLS0100   ************************* -->
+  <action name="BLS0100vermaster" class="action.XBRLBLS0100Action" method="BLS0100vermaster">
+			<result type="json" />
+		</action>
+  <action name="BLS0100cancel" class="dao.XBRLBLS0100Dao" method="modBLS0100cancel">   
+			<result type="json"/>
+			</action>
+  
+  <action name="BLS0100verify" class="action.XBRLBLS0100Action" method="BLS0100verify">
+			<result type="json" />
+		</action>
+		
+  <action name="BLS0100chckmodified" class="dao.XBRLBLS0100Dao" method="BLS0100chckmodified">
+			<result type="json" />
+		</action>
+  
+  
+  <action name="bls0100EXCELREPORT" class="reports.XBRLBLS0100ActionXL"
+			method="bls0100EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	<action name="bls0100PDFREPORT" class="reportsPDF.XBRLBLS0100ActionPDF"
+			method="bls0100PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+
+
+		 <action name="bls0100EXCELSum" class="reports.XBRLBLS0100ActionSumXL"
+			method="bls0100EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+  
+  
+  
+  
+<action name="BLS0100" class="action.XBRLBLS0100Action" method="modXbBLSCreate100">
+			<result type="json" />
+		</action>
+
+
+<action name="savecheckbls0100" method="detailBLS0100savecheck" class="dao.XBRLBLS0100Dao">
+		<result type="json" />
+		</action>
+
+	<action name="BLS0100criteria" class="dao.CriteriaDao" method="BLS0100criteriaCheck">
+			<result type="json"/>
+			</action>
+			
+		<action name="BLS0100sec1"  class="action.XBRLBLS0100Action" method="section1BLS0100">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="BLS0100sec2"  class="action.XBRLBLS0100Action" method="section2BLS0100">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+              <action name="BLS0100sec3"  class="action.XBRLBLS0100Action" method="section3BLS0100">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action> 
+             
+             
+             <action name="BLS0100sec4"  class="action.XBRLBLS0100Action" method="section4BLS0100">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action> 
+             
+             
+              <action name="bls0100details"  class="action.XBRLBLS0100Action" method="detailBLS0100">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	
+ 
+       <action name="bls01002details"  class="action.XBRLBLS0100Action" method="detail2BLS0100">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	 
+ 
+              <action name="bls01003details"  class="action.XBRLBLS0100Action" method="detail3BLS0100">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	 
+ 
+              <action name="bls01004details"  class="action.XBRLBLS0100Action" method="detail4BLS0100">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	 
+    
+             <action name="saveSumbls" method="detailBLS0100saves" class="dao.XBRLBLS0100Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<action name="XMLDOWNLOADb1" class="reports.XMLDOWNLOAD" method="blsxml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		<action name="BLS0100sec1filter" class="dao.XBRLBLS0100Dao" method="BLS0100sec1filter">
+			<result type="json" />
+		</action>
+            
+            
+   <!--  ************************* END  of BLS0100   ************************* --> 
+    <!-- ****************************************BLS0110************************************** -->
+<action name="BLS0110criteria" class="dao.CriteriaDao" method="BLS0110criteriaCheck">
+<result type="json"/>
+</action>
+<action name="savecheckBLS0110" method="detailBLS0110savecheck" class="dao.XBRLBLS0110Dao">
+
+<result type="json" />
+</action>
+<action name="BLS0110seccc1"  class="action.XBRLBLS0110Action" method="section1BLS0110">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>	
+             
+             <action name="BLS0110seccc2"  class="action.XBRLBLS0110Action" method="section2BLS0110">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>	
+             
+             <action name="BLS0110det1"  class="action.XBRLBLS0110Action" method="det1BLS0110">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>	
+              <action name="BLS0110det2"  class="action.XBRLBLS0110Action" method="det2BLS0110">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+       <action name="BLS0110dt1" class="action.XBRLBLS0110Action" method="modXbBLSCreate1101">
+			<result type="json" />
+		</action>
+		
+             <action name="BLS0110dt2" class="action.XBRLBLS0110Action" method="modXbBLSCreate1102">
+			<result type="json" />
+		</action>
+		
+		<action name="saveSumbls1" method="detailBLS0110saves" class="dao.XBRLBLS0110Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		
+		<action name="bls0110PDFREPORT" class="reportsPDF.XBRLBLS0110ActionPDF"
+			method="bls0110PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		
+		 <action name="bls0110EXCELREPORT" class="reports.XBRLBLS0110ActionXL"
+			method="bls0110EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="bls0110EXCELSum" class="reports.XBRLBLS0110ActionSumXL"
+			method="bls0110EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ 
+		<action name="druploadFilebls110" class="action.BulkUploadBls0110Action"
+			method="bls0110Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilebls110" class="action.BulkUploadBls0110Action"
+			method="bls0110Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+		
+ <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BLS0110 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+ 
+    <action name="BLS0110chckmodified" class="dao.XBRLBLS0110Dao" method="BLS0110chckmodified">
+			<result type="json" />
+		</action>
+		
+ 
+		<action name="BLS0110cancel1" class="dao.XBRLBLS0110Dao" method="modBLS0110cancel1">   
+			<result type="json"/>
+			</action>
+		
+ 
+		<action name="BLS0110cancel2" class="dao.XBRLBLS0110Dao" method="modBLS0110cancel2">   
+			<result type="json"/>
+			</action>
+			
+			<action name="BLS0110verify1" class="action.XBRLBLS0110Action" method="BLS0110verify1">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="BLS0110verify2" class="action.XBRLBLS0110Action" method="BLS0110verify2">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="BLS0110vermaster1" class="action.XBRLBLS0110Action" method="BLS0110vermaster1">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0110vermaster2" class="action.XBRLBLS0110Action" method="BLS0110vermaster2">
+			<result type="json" />
+		</action>
+		
+ 
+		<action name="XMLDOWNLOADBLS0106" class="reports.XMLDOWNLOAD" method="bls0106xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+ 
+		<action name="druploadFilebls110" class="action.BulkUploadBls0110Action"
+			method="bls0110Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilebls110" class="action.BulkUploadBls0110Action"
+			method="bls0110Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+     <!--  ************************* END  of BLS0110   ************************* --> 
+     
+      <!-- ****************************************BLS0120************************************** -->
+  	
+
+
+      <!-- ****************************************BLS0120************************************** -->
+   <action name="bls0120criteria" class="dao.CriteriaDao" method="BLS0120criteriaCheck">
+			<result type="json"/>
+			</action>
+		<action name="BLS0120sec1"  class="action.XBRLBLS0120Action" method="section1BLS0120">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>	
+    
+              <action name="bls0120details"  class="action.XBRLBLS0120Action" method="detailBLS0120">
+			<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+ </action>	
+ <action name="BLS0120" class="action.XBRLBLS0120Action" method="modXbBLSCreate120">
+			<result type="json" />
+		</action>
+		
+		
+		<action name="savecheckBLS0120" method="detailBLS0120savecheck" class="dao.XBRLBLS0120Dao">
+
+<result type="json" />
+</action>
+ 
+  <action name="bls0120EXCELREPORT" class="reports.XBRLBLS0120ActionXL"
+			method="bls0120EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+  <action name="bls0120PDFREPORT" class="reportsPDF.XBRLBLS0120ActionPDF"
+			method="bls0120PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+
+
+		 <action name="bls0120EXCELSum" class="reports.XBRLBLS0120ActionSumXL"
+			method="bls0120EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+  
+ 
+		
+		<action name="saveSumbls2" method="detailBLS0120saves" class="dao.XBRLBLS0120Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		    <!--  ************************* END  of BLS0120   ************************* --> 
+
+              <!-- gfdg -->
+		<action name="BLS0120chckmodified" class="dao.XBRLBLS0120Dao" method="BLS0120chckmodified">
+			<result type="json" />
+		</action>
+		<action name="BLS0120verify" class="action.XBRLBLS0120Action" method="BLS0120verify">
+			<result type="json" />
+		</action>
+	
+		<action name="BLS0120vermaster" class="action.XBRLBLS0120Action" method="BLS0120vermaster">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0120cancel" class="dao.XBRLBLS0120Dao" method="modBLS0120cancel">   
+			<result type="json"/>
+			</action>
+		
+		<!-- yfhhfkjhhjk -->	
+
+
+           <action name="XMLDOWNLOAD1" class="reports.XMLDOWNLOAD" method="blsxml1">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+            
+		
+		    <!--  ************************* END  of BLS0120   ************************* --> 
+		    <!-- *********************start of PSC0105******************************** -->     
+            <action name="PSC0105EXCELSum" class="reports.XBRLPSC0105ActionSumXL"
+			method="PSC0105EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+   
+    <action name="PSC0105PDFREPORT" class="reportsPDF.XBRLPSC0105ActionPDF"
+			method="PSC0105PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+            
+           <action name="PSC0105criteria" class="dao.CriteriaDao" method="PSC0105106criteriaCheck">
+<result type="json"/>
+</action>
+
+
+<action name="PSC0105sec1"  class="action.XBRLPSC0105Action" method="section1PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0105sec2"  class="action.XBRLPSC0105Action" method="section2PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             <action name="PSC0105sec3"  class="action.XBRLPSC0105Action" method="section3PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+     
+             <action name="PSC0105sec4"  class="action.XBRLPSC0105Action" method="section4PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+          
+            <action name="PSC0105sec5"  class="action.XBRLPSC0105Action" method="section5PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+             
+             
+              <action name="PSC0105details1"  class="action.XBRLPSC0105Action" method="detsec1PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+             
+              
+              <action name="PSC0105details2"  class="action.XBRLPSC0105Action" method="detsec2PSC0105">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+		<action name="PSC0105s1" class="action.XBRLPSC0105Action" method="modXbPSCCreate105S1">
+			<result type="json" />
+		</action>
+             
+             
+             <action name="PSC0105s2" class="action.XBRLPSC0105Action" method="modXbPSCCreate105S2">
+			<result type="json" />
+		</action>
+             
+             
+		<action name="PSC0105EXCELREPORT" class="reports.XBRLPSC0105ActionXL"
+			method="PSC0105EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		      <action name="druploadFilepsc105" class="action.BulkUploadPsc0105Action"
+			method="psc105Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilepsc105" class="action.BulkUploadPsc0105Action"
+			method="psc105Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action> 
+		
+<!-- *********************end of PSC0105******************************** -->     
+  
+		    
+		    
+		    
+		      <!-- ****************************************BLS0130************************************** -->
+		      <action name="savecheckBLS130" method="detailBLS0130savecheck" class="dao.XBRLBLS0130Dao">
+
+<result type="json" />
+</action>
+		      <action name="BLS0130chckmodified" class="dao.XBRLBLS0130Dao" method="BLS0130chckmodified">
+			<result type="json" />
+		</action>
+ <action name="BLS0130verify" class="action.XBRLBLS0130Action" method="BLS0130verify">
+			<result type="json" />
+		</action>
+	
+		<action name="BLS0130vermaster" class="action.XBRLBLS0130Action" method="BLS0130vermaster">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0130cancel" class="dao.XBRLBLS0130Dao" method="modBLS0130cancel">   
+			<result type="json"/>
+			</action>
+		      
+		      
+		<action name="BLS0130criteria" class="dao.CriteriaDao" method="BLS0130criteriaCheck">
+			<result type="json"/>
+			</action>
+		<action name="BLS0130seccc1"  class="action.XBRLBLS0130Action" method="section1BLS0130">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+        <action name="BLS0130det1"  class="action.XBRLBLS0130Action" method="det1BLS0130">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+             
+             <action name="BLS0130" class="action.XBRLBLS0130Action" method="modXbBLSCreate130">
+			<result type="json" />
+		</action>
+             
+             	<action name="saveSum130" method="detailBLS0130saves" class="dao.XBRLBLS0130Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+             
+             <action name="bls0130EXCELREPORT" class="reports.XBRLBLS0130ActionXL"
+			method="bls0130EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             
+              <action name="bls0130EXCELSum" class="reports.XBRLBLS0130ActionSumXL"
+			method="bls0130EXCELSums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+		<action name="bls0130PDFREPORT" class="reportsPDF.XBRLBLS0130ActionPDF"
+			method="bls0130PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		
+            <!--  ************************* END  of BLS0130   ************************* -->    	
+		 
+             <action name="BLS0140chckmodified" class="dao.XBRLBLS0140Dao" method="BLS0140chckmodified">
+			<result type="json" />
+		</action>
+		 <action name="BLS0140verify" class="action.XBRLBLS0140Action" method="BLS0140verify">
+			<result type="json" />
+		</action>
+		<action name="BLS0140verify1" class="action.XBRLBLS0140Action" method="BLS0140verify1">
+			<result type="json" />
+		</action>
+		<action name="BLS0140cancel" class="dao.XBRLBLS0140Dao" method="modBLS0140cancel">   
+			<result type="json"/>
+			</action>
+		<action name="BLS0140vermaster" class="action.XBRLBLS0140Action" method="BLS0140vermaster">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0140vermaster1" class="action.XBRLBLS0140Action" method="BLS0140vermaster1">
+			<result type="json" />
+		</action>
+		<action name="savecheckbls0140" method="detailBLS0140savecheck" class="dao.XBRLBLS0140Dao">
+		<result type="json" />
+		</action>
+   	<action name="XMLDOWNLOAD140" class="reports.XMLDOWNLOAD" method="bls2xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+            
+		 <action name="BLS0140EXCELSum" class="reports.XBRLBLS0140ActionSumXL"
+			method="BLS0140EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="BLS0140PDFREPORT" class="reportsPDF.XBRLBLS0140ActionPDF"
+			method="BLS0140PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+			
+			 <action name="BLS0140EXCELREPORT" class="reports.XBRLBLS0140ActionXL"
+			method="BLS0140EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+			<action name="BLS0140criteria" class="dao.CriteriaDao" method="BLS0140criteriaCheck">
+			<result type="json"/>
+			</action>
+		    
+		    <action name="BLS0140SUM"  class="action.XBRLBLS0140Action" method="section1BLS0140">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+		    <action name="BLS0140SUM1"  class="action.XBRLBLS0140Action" method="section2BLS0140">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+		    
+		     <action name="BLS0140details"  class="action.XBRLBLS0140Action" method="detBLS0140">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+		      
+		     <action name="BLS0140details2"  class="action.XBRLBLS0140Action" method="det2BLS0140">
+<interceptor-ref name="defaultStack1"/>
+             <result type="json"/>
+             </action>
+             
+		     <action name="BLS0140" class="action.XBRLBLS0140Action" method="modXbBLSCreate140">
+			<result type="json" />
+		</action>
+		
+		 
+		     <action name="BLS0140dt2" class="action.XBRLBLS0140Action" method="modXbBLSCreate1402">
+			<result type="json" />
+		</action>
+             	<action name="saveSum140" method="detailBLS0140saves" class="dao.XBRLBLS0140Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		 <action name="XMLDOWNLOADb140" class="reports.XMLDOWNLOAD" method="bls2xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<!-- ###################################### -->
+		
+		
+		<action name="BLS0102chckmodified" class="dao.XBRLBLS0102Dao" method="BLS0102chckmodified">
+			<result type="json" />
+		</action>
+
+
+<action name="bls0102verify" class="action.XBRLBLS0102Action" method="bls0102verify">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0102vermaster" class="action.XBRLBLS0102Action" method="BLS0102vermaster">
+			<result type="json" />
+		</action>
+			<action name="BLS0102cancel" class="dao.XBRLBLS0102Dao" method="modBLS0102cancel">   
+			<result type="json"/>
+			</action>
+		
+		
+		<action name="savecheckBLS" method="detailBLS0102savecheck" class="dao.XBRLBLS0102Dao">
+
+<result type="json" />
+</action> 
+
+		<action name="XMLDOWNLOADb2" class="reports.XMLDOWNLOAD" method="bls5xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+
+		<action name="saveSumb2" method="detailBLS0102saves" class="dao.XBRLBLS0102Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0102EXCELSum" class="reports.XBRLBLS0102ActionSumXL"
+			method="BLS0102EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="BLS0102PDFREPORT" class="reportsPDF.XBRLBLS0102ActionPDF"
+			method="BLS0102PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+  <action name="BLS0102EXCELREPORT" class="reports.XBRLBLS0102ActionXL"
+			method="BLS0102EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="BLS0102criteria" class="dao.CriteriaDao" method="BLS0102criteriaCheck">
+<result type="json"/>
+</action>
+   
+<action name="BLS0102sec1"  class="action.XBRLBLS0102Action" method="section1BLS0102">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+   
+ <action name="BLS0102sec2"  class="action.XBRLBLS0102Action" method="section2BLS0102">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>  
+   
+<action name="BLS0102det1"  class="action.XBRLBLS0102Action" method="det1BLS0102">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>     
+ 
+ <!-- <action name="BLS0102det2"  class="action.XBRLBLS0102Action" method="det2BLS0102">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action> -->
+		<action name="BLS0102" class="action.XBRLBLS0102Action" method="modXbBLSCreate102">
+			<result type="json" />
+		</action>
+		
+		
+		
+			<!-- ###################################### -->
+		<action name="savecheckbls0103" method="detailBLS0103savecheck" class="dao.XBRLBLS0103Dao">
+		<result type="json" />
+		</action>
+           
+           
+           
+		<action name="BLS0103" class="action.XBRLBLS0103Action" method="modXbBLSCreateH">
+			<result type="json" />
+		</action>
+
+           
+		<action name="BLS0103chckmodified" class="dao.XBRLBLS0103Dao" method="BLS0103chckmodified">
+			<result type="json" />
+		</action>
+		<action name="BLS0103verify" class="action.XBRLBLS0103Action" method="BLS0103verify">
+			<result type="json" />
+		</action>
+	
+		<action name="BLS0103vermaster" class="action.XBRLBLS0103Action" method="BLS0103vermaster">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0103cancel" class="dao.XBRLBLS0103Dao" method="modBLS0103cancel">   
+			<result type="json"/>
+			</action>
+		
+		
+	<action name="saveSumbls1" method="detailBLS0103saves" class="dao.XBRLBLS0103Dao">
+			<interceptor-ref name="defaultStack1" />
+			<result type="json" />
+		</action>
+
+           <action name="XMLDOWNLOAD1" class="reports.XMLDOWNLOAD" method="bls5xml">
+			<!-- <result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result> -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+            
+		<action name="BLS0103criteria" class="dao.CriteriaDao" method="BLS0103criteriaCheck">
+<result type="json"/>
+</action>
+   
+		<action name="BLS0103EXCELSum" class="reports.XBRLBLS0103ActionSumXL"
+			method="BLS0103EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		<action name="druploadFilebls103" class="action.BulkUploadBls0103Action"
+			method="bls0103Upload">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+			<action name="drcsvuploadFilebls103" class="action.BulkUploadBls0103Action"
+			method="bls0103Upload1">
+			<result name="success">/jsp/XBRL_ResultAlert.jsp</result>
+		</action>
+		
+		
+	 <action name="BLS0103PDFREPORT" class="reportsPDF.XBRLBLS0103ActionPDF"
+			method="BLS0103PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		
+  <action name="BLS0103EXCELREPORT" class="reports.XBRLBLS0103ActionXL"
+			method="BLS0103EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+ <action name="BLS0103sec1"  class="action.XBRLBLS0103Action" method="section1BLS0103">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+   
+ <action name="BLS0103sec2"  class="action.XBRLBLS0103Action" method="section2BLS0103">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>  
+   
+<action name="BLS0103det1"  class="action.XBRLBLS0103Action" method="det1BLS0103">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>     
+ 
+ <!-- <action name="BLS0103det2"  class="action.XBRLBLS0103Action" method="det2BLS0103">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action> 
+		 -->
+<action name="BLS0103" class="action.XBRLBLS0103Action" method="modXbBLSCreate103">
+			<result type="json" />
+		</action>    
+ <!-- ###################################### -->
+
+ <!--  ************************* START  of BLS0104  ************************* -->
+		<action name="BLS0104chckmodified" class="dao.XBRLBLS0104Dao" method="BLS0104chckmodified">
+			<result type="json" />
+		</action>
+		<action name="bls0104verify" class="action.XBRLBLS0104Action" method="bls0104verify">
+			<result type="json" />
+		</action>
+		
+		<action name="BLS0104vermaster" class="action.XBRLBLS0104Action" method="BLS0104vermaster">
+			<result type="json" />
+		</action>
+			<action name="BLS0104cancel" class="dao.XBRLBLS0104Dao" method="modBLS0104cancel">   
+			<result type="json"/>
+			</action>
+			<action name="savecheckbls4" method="detailBLS0104savecheck" class="dao.XBRLBLS0104Dao">
+
+<result type="json" />
+</action>
+		
+		<action name="BLS0104criteria" class="dao.CriteriaDao" method="BLS0104criteriaCheck">
+<result type="json"/>
+</action>
+   
+<action name="BLS0104sec1"  class="action.XBRLBLS0104Action" method="section1BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+   
+ <action name="BLS0104sec2"  class="action.XBRLBLS0104Action" method="section2BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>  
+   
+   <action name="BLS0104sec3"  class="action.XBRLBLS0104Action" method="section3BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+<action name="BLS0104sec4"  class="action.XBRLBLS0104Action" method="section4BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+<action name="BLS0104sec5"  class="action.XBRLBLS0104Action" method="section5BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+<action name="BLS0104sec6"  class="action.XBRLBLS0104Action" method="section6BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+<action name="BLS0104sec7"  class="action.XBRLBLS0104Action" method="section7BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+<action name="BLS0104sec8"  class="action.XBRLBLS0104Action" method="section8BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+<action name="BLS0104det1"  class="action.XBRLBLS0104Action" method="det1BLS0104">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>     
+ <action name="BLS0104" class="action.XBRLBLS0104Action" method="modXbBLSCreate104">
+			<result type="json" />
+		</action>
+		
+		
+		
+		<action name="BLS0104EXCELSum" class="reports.XBRLBLS0104ActionSumXL"
+			method="BLS0104EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+		
+		
+		
+	 <action name="BLS0104PDFREPORT" class="reportsPDF.XBRLBLS0104ActionPDF"
+			method="BLS0104PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+		<action name="BLS0104EXCELREPORT" class="reports.XBRLBLS0104ActionXL"
+method="BLS0104EXCEL">
+<result name="success" type="stream">
+<param name="contentType">application/octet-stream</param>
+<param name="inputName">inputStream</param>
+<param name="contentDisposition">attachment;filename="${fileName}"</param>
+<param name="bufferSize">4096</param>
+</result>
+</action>
+		 <action name="XMLDOWNLOAD104" class="reports.XMLDOWNLOAD" method="bls5xml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+  <!--  ************************* END  of BLS0104   ************************* -->
+
+
+
+
+
+
+
+
+ <!--  ************************* START  of BLS0105  ************************* -->
+   
+  <action name="BLS0105criteria" class="dao.CriteriaDao" method="BLS0105criteriaCheck">
+<result type="json"/>
+</action>
+   <action name="BLS0105chckmodified" class="dao.XBRLBLS0105Dao" method="BLS0105chckmodified">
+			<result type="json" />
+		</action>
+		<action name="savecheckBLS0105" method="detailBLS0105savecheck" class="dao.XBRLBLS0105Dao">
+
+<result type="json" />
+</action>
+		<action name="BLS0105cancel" class="dao.XBRLBLS0105Dao" method="modBLS0105cancel">   
+			<result type="json"/>
+			</action>
+			<action name="BLS0105chckmodified" class="dao.XBRLBLS0105Dao" method="BLS0105chckmodified">
+			<result type="json" />
+		</action>
+		<action name="BLS0105vermaster" class="action.XBRLBLS0105Action" method="BLS0105vermaster">
+			<result type="json" />
+		</action>		
+<action name="BLS0105sec1"  class="action.XBRLBLS0105Action" method="section1BLS0105">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>
+ 
+<action name="BLS0105details"  class="action.XBRLBLS0105Action" method="detBLS0105">
+<interceptor-ref name="defaultStack1"/>
+<result type="json"/>
+</action>     
+ 	<action name="BLS0105EXCELSum" class="reports.XBRLBLS0105ActionSumXL"
+			method="BLS0105EXCELsums">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+             	
+   
+    <action name="BLS0105PDFREPORT" class="reportsPDF.XBRLBLS0105ActionPDF"
+			method="BLS0105PDF">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>  
+	  <action name="BLS0105EXCELREPORT" class="reports.XBRLBLS0105ActionXL"
+			method="BLS0105EXCEL">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+			 <action name="XMLDOWNLOAD105" class="reports.XMLDOWNLOAD" method="bls5xml">
+			<result name="success">/jsp/PYM0100/XBRL_REP_PYM0100_01.jsp</result>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+			<action name="saveSumbls5" method="detailBLS0105saves" class="dao.XBRLBLS0105Dao"> 
+			<interceptor-ref name="defaultStack1"/> <result type="json"/> 
+			
+			</action> 
+			<action name="BLS0105" class="action.XBRLBLS0105Action" method="modXbBLSCreate105">
+			<result type="json" />
+		</action>
+		<action name="bls0105verify" class="action.XBRLBLS0105Action" method="bls0105verify">
+			<result type="json" />
+		</action>
+			
+     <!--  ************************* END  of BLS0105   ************************* -->
+<!--  ************************* Start The Session and Password    ************************* -->
+ 	
+ 	<action name="sessionreset" class="dao.XBRLUserProfileDao" method="sessionreset">
+			<result type="json" />
+		</action>
+		
+		<action name="passwordreset" class="dao.XBRLUserProfileDao" method="passwordreset">
+			<result type="json" />
+		</action>
+ 	
+ 	
+ 	<action name="finuserDetails" class="action.XBRLUserProfileAction" method="finuserDetails">
+        <result type="json" />
+		</action> 
+ 	
+ 	<!--  ************************* End The Session and Password    ************************* -->
+
+
+
+
+
+
+
+
+	</package>
+
+</struts>

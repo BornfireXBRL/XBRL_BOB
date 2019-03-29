@@ -1,0 +1,2158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 5.5.2  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BLS0100" pageWidth="6050" pageHeight="4300" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="6010" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a465670-cc4a-4270-965f-8efb86e33b71">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="XBRL"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Table" pattern="">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#CACBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[OR(
+$F{INSTANCE_CODE}.toString().equals("127"),
+$F{INSTANCE_CODE}.toString().equals("133"),
+$F{INSTANCE_CODE}.toString().equals("139"),
+$F{INSTANCE_CODE}.toString().equals("145"),
+$F{INSTANCE_CODE}.toString().equals("151"),
+$F{INSTANCE_CODE}.toString().equals("157"),
+$F{INSTANCE_CODE}.toString().equals("163"),
+$F{INSTANCE_CODE}.toString().equals("169"),
+$F{INSTANCE_CODE}.toString().equals("175"),
+$F{INSTANCE_CODE}.toString().equals("181"),
+$F{INSTANCE_CODE}.toString().equals("187"),
+$F{INSTANCE_CODE}.toString().equals("193"),
+$F{INSTANCE_CODE}.toString().equals("199"),
+$F{INSTANCE_CODE}.toString().equals("205"),
+$F{INSTANCE_CODE}.toString().equals("211"),
+$F{INSTANCE_CODE}.toString().equals("217"),
+$F{INSTANCE_CODE}.toString().equals("223"),
+$F{INSTANCE_CODE}.toString().equals("229"),
+$F{INSTANCE_CODE}.toString().equals("235"),
+$F{INSTANCE_CODE}.toString().equals("241"),
+$F{INSTANCE_CODE}.toString().equals("247"),
+$F{INSTANCE_CODE}.toString().equals("253"),
+$F{INSTANCE_CODE}.toString().equals("259"),
+$F{INSTANCE_CODE}.toString().equals("265"),
+$F{INSTANCE_CODE}.toString().equals("271"),
+$F{INSTANCE_CODE}.toString().equals("277"),
+$F{INSTANCE_CODE}.toString().equals("283"),
+$F{INSTANCE_CODE}.toString().equals("289"),
+$F{INSTANCE_CODE}.toString().equals("295"),
+$F{INSTANCE_CODE}.toString().equals("301"),
+$F{INSTANCE_CODE}.toString().equals("307")
+)]]></conditionExpression>
+			<style mode="Transparent" forecolor="#050505" backcolor="#78EFF5" fontSize="14" isBold="true" isItalic="true">
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[OR(
+$F{INSTANCE_CODE}.toString().equals("127"),
+$F{INSTANCE_CODE}.toString().equals("133"),
+$F{INSTANCE_CODE}.toString().equals("139"),
+$F{INSTANCE_CODE}.toString().equals("145"),
+$F{INSTANCE_CODE}.toString().equals("151"),
+$F{INSTANCE_CODE}.toString().equals("157"),
+$F{INSTANCE_CODE}.toString().equals("163"),
+$F{INSTANCE_CODE}.toString().equals("169"),
+$F{INSTANCE_CODE}.toString().equals("175"),
+$F{INSTANCE_CODE}.toString().equals("181"),
+$F{INSTANCE_CODE}.toString().equals("187"),
+$F{INSTANCE_CODE}.toString().equals("193"),
+$F{INSTANCE_CODE}.toString().equals("199"),
+$F{INSTANCE_CODE}.toString().equals("205"),
+$F{INSTANCE_CODE}.toString().equals("211"),
+$F{INSTANCE_CODE}.toString().equals("217"),
+$F{INSTANCE_CODE}.toString().equals("223"),
+$F{INSTANCE_CODE}.toString().equals("229"),
+$F{INSTANCE_CODE}.toString().equals("235"),
+$F{INSTANCE_CODE}.toString().equals("241"),
+$F{INSTANCE_CODE}.toString().equals("247"),
+$F{INSTANCE_CODE}.toString().equals("253"),
+$F{INSTANCE_CODE}.toString().equals("259"),
+$F{INSTANCE_CODE}.toString().equals("265"),
+$F{INSTANCE_CODE}.toString().equals("271"),
+$F{INSTANCE_CODE}.toString().equals("277"),
+$F{INSTANCE_CODE}.toString().equals("283"),
+$F{INSTANCE_CODE}.toString().equals("289"),
+$F{INSTANCE_CODE}.toString().equals("295"),
+$F{INSTANCE_CODE}.toString().equals("301"),
+$F{INSTANCE_CODE}.toString().equals("307")
+)]]></conditionExpression>
+			<style forecolor="#FFFFFF" backcolor="#FFFFFF">
+				<box>
+					<pen lineColor="#050404"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#050404"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#050404"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Style12">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[OR(
+$F{INSTANCE_CODE}.toString().equals("127"),
+$F{INSTANCE_CODE}.toString().equals("133"),
+$F{INSTANCE_CODE}.toString().equals("139"),
+$F{INSTANCE_CODE}.toString().equals("145"),
+$F{INSTANCE_CODE}.toString().equals("151"),
+$F{INSTANCE_CODE}.toString().equals("157"),
+$F{INSTANCE_CODE}.toString().equals("163"),
+$F{INSTANCE_CODE}.toString().equals("169"),
+$F{INSTANCE_CODE}.toString().equals("175"),
+$F{INSTANCE_CODE}.toString().equals("181"),
+$F{INSTANCE_CODE}.toString().equals("187"),
+$F{INSTANCE_CODE}.toString().equals("193"),
+$F{INSTANCE_CODE}.toString().equals("199"),
+$F{INSTANCE_CODE}.toString().equals("205"),
+$F{INSTANCE_CODE}.toString().equals("211"),
+$F{INSTANCE_CODE}.toString().equals("217"),
+$F{INSTANCE_CODE}.toString().equals("223"),
+$F{INSTANCE_CODE}.toString().equals("229"),
+$F{INSTANCE_CODE}.toString().equals("235"),
+$F{INSTANCE_CODE}.toString().equals("241"),
+$F{INSTANCE_CODE}.toString().equals("247"),
+$F{INSTANCE_CODE}.toString().equals("253"),
+$F{INSTANCE_CODE}.toString().equals("259"),
+$F{INSTANCE_CODE}.toString().equals("265"),
+$F{INSTANCE_CODE}.toString().equals("271"),
+$F{INSTANCE_CODE}.toString().equals("277"),
+$F{INSTANCE_CODE}.toString().equals("283"),
+$F{INSTANCE_CODE}.toString().equals("289"),
+$F{INSTANCE_CODE}.toString().equals("295"),
+$F{INSTANCE_CODE}.toString().equals("301"),
+$F{INSTANCE_CODE}.toString().equals("307")
+)]]></conditionExpression>
+			<style forecolor="#FFFFFF" backcolor="#FFFFFF">
+				<box>
+					<pen lineColor="#050404"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#050404"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#050404"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="Table_TD2" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[OR(
+$F{INSTANCE_CODE}.toString().equals("127"),
+$F{INSTANCE_CODE}.toString().equals("133"),
+$F{INSTANCE_CODE}.toString().equals("139"),
+$F{INSTANCE_CODE}.toString().equals("145"),
+$F{INSTANCE_CODE}.toString().equals("151"),
+$F{INSTANCE_CODE}.toString().equals("157"),
+$F{INSTANCE_CODE}.toString().equals("163"),
+$F{INSTANCE_CODE}.toString().equals("169"),
+$F{INSTANCE_CODE}.toString().equals("175"),
+$F{INSTANCE_CODE}.toString().equals("181"),
+$F{INSTANCE_CODE}.toString().equals("187"),
+$F{INSTANCE_CODE}.toString().equals("193"),
+$F{INSTANCE_CODE}.toString().equals("199"),
+$F{INSTANCE_CODE}.toString().equals("205"),
+$F{INSTANCE_CODE}.toString().equals("211"),
+$F{INSTANCE_CODE}.toString().equals("217"),
+$F{INSTANCE_CODE}.toString().equals("223"),
+$F{INSTANCE_CODE}.toString().equals("229"),
+$F{INSTANCE_CODE}.toString().equals("235"),
+$F{INSTANCE_CODE}.toString().equals("241"),
+$F{INSTANCE_CODE}.toString().equals("247"),
+$F{INSTANCE_CODE}.toString().equals("253"),
+$F{INSTANCE_CODE}.toString().equals("259"),
+$F{INSTANCE_CODE}.toString().equals("265"),
+$F{INSTANCE_CODE}.toString().equals("271"),
+$F{INSTANCE_CODE}.toString().equals("277"),
+$F{INSTANCE_CODE}.toString().equals("283"),
+$F{INSTANCE_CODE}.toString().equals("289"),
+$F{INSTANCE_CODE}.toString().equals("295"),
+$F{INSTANCE_CODE}.toString().equals("301"),
+$F{INSTANCE_CODE}.toString().equals("307")
+)]]></conditionExpression>
+			<style mode="Transparent" forecolor="#050505" backcolor="#78EFF5" fontSize="14" isBold="true" isItalic="true">
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<subDataset name="tableDataset" uuid="4269b7fd-b8f2-401e-98ae-d6f70d5f3c72">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="XBRL"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="REPORT_ID" class="java.lang.String"/>
+		<parameter name="VERSION_NO" class="java.lang.String"/>
+		<parameter name="REPORT_DATE" class="java.lang.String"/>
+		<parameter name="FROM_DATE" class="java.lang.String"/>
+		<parameter name="TO_DATE" class="java.lang.String"/>
+		<parameter name="CRNCY_CODE" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM TABLE(BLS0100_S2_RPT_FUN($P{REPORT_ID},$P{VERSION_NO},$P{REPORT_DATE},$P{FROM_DATE},$P{TO_DATE},$P{CRNCY_CODE}))]]>
+		</queryString>
+		<field name="REPORT_ID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="REPORT_ID"/>
+		</field>
+		<field name="REPORT_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="REPORT_DATE"/>
+		</field>
+		<field name="FROM_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="FROM_DATE"/>
+		</field>
+		<field name="TO_DATE" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="TO_DATE"/>
+		</field>
+		<field name="VERSION_NO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="VERSION_NO"/>
+		</field>
+		<field name="CURRENCY" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="CURRENCY"/>
+		</field>
+		<field name="REF_CODE_DESC" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="REF_CODE_DESC"/>
+		</field>
+		<field name="INSTANCE_CODE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="INSTANCE_CODE"/>
+		</field>
+		<field name="CENTRAL_BANK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="CENTRAL_BANK"/>
+		</field>
+		<field name="BANKS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="BANKS"/>
+		</field>
+		<field name="NON_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="NON_BNK"/>
+		</field>
+		<field name="CREDIT_UNIONS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="CREDIT_UNIONS"/>
+		</field>
+		<field name="FIN_GBC1" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FIN_GBC1"/>
+		</field>
+		<field name="TRUSTS_NR_GBC" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="TRUSTS_NR_GBC"/>
+		</field>
+		<field name="INSURANCE_CORP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="INSURANCE_CORP"/>
+		</field>
+		<field name="PENSION" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="PENSION"/>
+		</field>
+		<field name="INVESTMENT" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="INVESTMENT"/>
+		</field>
+		<field name="HOLDING_COMP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="HOLDING_COMP"/>
+		</field>
+		<field name="FINANCIAL_AUX" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FINANCIAL_AUX"/>
+		</field>
+		<field name="CENTRAL_GOV" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="CENTRAL_GOV"/>
+		</field>
+		<field name="STATE_LOC_GOV" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="STATE_LOC_GOV"/>
+		</field>
+		<field name="NON_FINANCE_GBC" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="NON_FINANCE_GBC"/>
+		</field>
+		<field name="GBC2" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="GBC2"/>
+		</field>
+		<field name="PUBLIC_NON_FIN_CORP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="PUBLIC_NON_FIN_CORP"/>
+		</field>
+		<field name="OTH_NON_FIN_CORP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="OTH_NON_FIN_CORP"/>
+		</field>
+		<field name="HOUSEHOLD" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="HOUSEHOLD"/>
+		</field>
+		<field name="NON_PROF_INSTITUTE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="NON_PROF_INSTITUTE"/>
+		</field>
+		<field name="AFF_NR" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="AFF_NR"/>
+		</field>
+		<field name="OTH_NR" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="OTH_NR"/>
+		</field>
+		<field name="TOT_LC" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="TOT_LC"/>
+		</field>
+		<field name="FC_CENTRAL_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_CENTRAL_BNK"/>
+		</field>
+		<field name="FC_BANKS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_BANKS"/>
+		</field>
+		<field name="FC_NON_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_NON_BNK"/>
+		</field>
+		<field name="FC_CREDIT_UNIONS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_CREDIT_UNIONS"/>
+		</field>
+		<field name="FC_FIN_GBC1" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_FIN_GBC1"/>
+		</field>
+		<field name="FC_TRUSTS_NR_GBC" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_TRUSTS_NR_GBC"/>
+		</field>
+		<field name="FC_INSURANCE_CORP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_INSURANCE_CORP"/>
+		</field>
+		<field name="FC_PENSION" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_PENSION"/>
+		</field>
+		<field name="FC_INVESTMENT" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_INVESTMENT"/>
+		</field>
+		<field name="FC_HOLDING_COMP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_HOLDING_COMP"/>
+		</field>
+		<field name="FC_FINANCIAL_AUX" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_FINANCIAL_AUX"/>
+		</field>
+		<field name="FC_CENTRAL_GOV" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_CENTRAL_GOV"/>
+		</field>
+		<field name="FC_STATE_LOC_GOV" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_STATE_LOC_GOV"/>
+		</field>
+		<field name="FC_NON_FINANCE_GBC" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_NON_FINANCE_GBC"/>
+		</field>
+		<field name="FC_GBC2" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_GBC2"/>
+		</field>
+		<field name="FC_PUBLIC_NON_FIN_CORP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_PUBLIC_NON_FIN_CORP"/>
+		</field>
+		<field name="FC_OTH_NON_FIN_CORP" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_OTH_NON_FIN_CORP"/>
+		</field>
+		<field name="FC_HOUSEHOLD" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_HOUSEHOLD"/>
+		</field>
+		<field name="FC_NON_PROF_INSTITUTE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_NON_PROF_INSTITUTE"/>
+		</field>
+		<field name="FC_AFF_NR_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_AFF_NR_BNK"/>
+		</field>
+		<field name="FC_AFF_NR_NON_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_AFF_NR_NON_BNK"/>
+		</field>
+		<field name="FC_OTH_NR_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_OTH_NR_BNK"/>
+		</field>
+		<field name="FC_OTH_NR_NON_BNK" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="FC_OTH_NR_NON_BNK"/>
+		</field>
+		<field name="TOT_FC" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="TOT_FC"/>
+		</field>
+		<field name="GRAND_TOT" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="GRAND_TOT"/>
+		</field>
+	</subDataset>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["BLS0100"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VERSION_NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FROM_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CRNCY_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["MUR"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String"/>
+	<parameter name="TAXONOMY" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="259" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="780" height="40" backcolor="#2D27DB" uuid="c75b909d-0469-45f5-85f1-6fe217c99948"/>
+				<textElement>
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[BLS0100 - Liabilities]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="200" height="30" uuid="29d628e6-c21a-44bd-9c2b-a191fd1a4e78"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Taxonomy Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="200" height="30" uuid="7b2d603f-d87b-4583-8c80-4fb52d0b0a65"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="200" height="30" uuid="ea31a64f-9a06-4188-a732-6aeda733bcf6"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Frequency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="200" height="30" uuid="4d456e4b-a949-4f82-8e6e-e4576c044f06"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="200" height="30" uuid="92f14739-49e3-401b-8ecd-080f9032c265"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting End Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="200" height="30" uuid="4de53204-7755-44bd-84ec-87528945c9f3"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Report Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="50" width="10" height="30" uuid="24cb836e-0cef-4c2b-9b9e-f9587f01d99e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="80" width="10" height="30" uuid="d0bcf542-dda1-4f38-8b3e-82586f43be60"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="110" width="10" height="30" uuid="29c1ce19-4170-4c4c-b77b-1e29b19a438b"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="140" width="10" height="30" uuid="a4e74517-18e6-4235-8237-4d25afdc15a3"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="170" width="10" height="30" uuid="307e2d45-c08e-4d85-af3c-7f02a81f22b3"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="200" width="10" height="30" uuid="0542565a-48d7-4568-a4ec-15d7bfd928e8"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="80" width="290" height="30" uuid="e854ea70-347c-4800-8909-8f2453d5806f"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CRNCY_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="110" width="290" height="30" uuid="8fd49dab-0d18-4814-99dd-18bd32d8d25a"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="140" width="290" height="30" uuid="a64b4cac-8622-4dd2-b590-1b627fef9fb0"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FROM_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="170" width="290" height="30" uuid="f562d159-5a19-4d21-833a-efc9d0fba309"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TO_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="200" width="290" height="30" uuid="021c430e-855b-4a9d-abcd-6ff24e7bc996"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VERSION_NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="50" width="290" height="30" uuid="8d0c46d1-65c9-4f4b-b9cf-87b794ea0e26"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TAXONOMY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="38" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="208" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<componentElement>
+				<reportElement x="0" y="-20" width="6000" height="210" uuid="7d5f4a33-9bb8-44f9-8162-7984918bd66d">
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="tableDataset" uuid="d08ddcc8-a149-4c26-9651-fe5352a5156a">
+						<datasetParameter name="REPORT_ID">
+							<datasetParameterExpression><![CDATA[$P{REPORT_ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="VERSION_NO">
+							<datasetParameterExpression><![CDATA[$P{VERSION_NO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="REPORT_DATE">
+							<datasetParameterExpression><![CDATA[$P{REPORT_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="FROM_DATE">
+							<datasetParameterExpression><![CDATA[$P{FROM_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="TO_DATE">
+							<datasetParameterExpression><![CDATA[$P{TO_DATE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CRNCY_CODE">
+							<datasetParameterExpression><![CDATA[$P{CRNCY_CODE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="300" uuid="41c50657-8368-4cc3-b298-fc6acbc27a0a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="60" rowSpan="3">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD2" height="30">
+							<textField>
+								<reportElement key="" style="Table_TD" isPrintRepeatedValues="false" mode="Opaque" x="0" y="0" width="300" height="30" backcolor="#FFFFFF" uuid="ea3cae58-7376-4b1c-bbe8-d3cf25c63aa3"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12"/>
+									<paragraph leftIndent="2"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{REF_CODE_DESC}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="5b4fdbb3-e227-494e-9e9e-9faea6680d5b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table_TH" height="60" rowSpan="3">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement style="Table_TD" x="0" y="0" width="50" height="30" uuid="4bdcd791-0f5b-49ea-9951-dba6477c864b"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{INSTANCE_CODE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:columnGroup width="2640" uuid="398fa72b-4012-4296-b927-c7cc23b19562">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [22]"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="2640" height="30" uuid="1c933118-6466-476f-9097-d718c485d7c8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="16"/>
+								</textElement>
+								<text><![CDATA[In National Currency]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="120" uuid="c190578c-7331-4a06-91f3-91a93060d415">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="136ff93d-c159-4351-9101-da1cd3bd2b35"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[CENTRAL BANK]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="7a726cbb-d27f-4049-81c3-465c0bf217be"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{CENTRAL_BANK}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="bdb28b5b-9ad0-45d6-a5d2-a6555bdd4515">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="306f46e1-f903-47d9-b950-00a9f70cf641"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[BANKS]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="73ab16cd-b986-4c64-bfb9-1f2d9158a09f"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{BANKS}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="18c193b4-9964-4e0e-9324-3aaa500dc682">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="8f7c1e4f-4236-4855-bbe2-4c07fb9dee2f"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Non Bank Deposit Taking institutions]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="76fad52d-48c9-455a-9721-84b68586fa30"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{NON_BNK}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="d69730c1-18f6-4ddc-8109-07184b2e261d">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="692374c3-5d7d-495d-861a-7b3e19e320f2"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Credit Unions]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="fb1e48f9-d73b-4e57-a715-7f82968e1e46"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{CREDIT_UNIONS}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="840" uuid="49756f3a-56cf-44a6-a92e-02c94fca6b6b">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [7]"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="840" height="30" uuid="85faa546-4682-4f63-9f85-2465adff9b85"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="14"/>
+									</textElement>
+									<text><![CDATA[Other Financial Corporations]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:column width="120" uuid="592b1f89-15b5-4966-9dec-90bf770f6ada">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="985f73ea-4ac3-452f-94a1-df9747075fa4"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Financial GBC1s]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="47be5363-7b5d-408b-8798-4402ac52577b"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FIN_GBC1}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="a30c147e-730f-4d89-9e39-719bfeed5b0e">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="18372a09-005a-4e31-b6d5-728570f628bc"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Trusts with Nonresident and GBC Settlors and Beneficiaries]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="1cf3ad0a-22e9-4f49-8e23-0786100099a2"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{TRUSTS_NR_GBC}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="7991e55a-3c75-4263-b94d-24f1141cbe34">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="f96bcb94-cc3c-4095-a763-28642246e97c"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Insurance Corporations]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="8f8c1745-9247-4a05-8b29-a0b11077aedf"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{INSURANCE_CORP}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="cd478008-8e3c-40f3-9b99-6f15678d4e92">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="3aa2dc94-2bc8-4456-a938-3fa21d39b217"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Pension Funds]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="eb507d89-95fe-41e4-9adc-57d405852544"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{PENSION}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="bacd4921-277d-47d3-8f41-6dd374182e9e">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column11"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="f0a9a74b-2bfc-4eab-933e-b436271444e1"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Investment Funds]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="bb921362-feec-4b44-80c3-6c5ddb33df62"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{INVESTMENT}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="2fb6476e-0589-4687-8529-f1fad8ecd3a1">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column12"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="f6372637-f921-40e9-8e63-da04829179a6"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Holding Companies]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="2099d69c-1fe1-45d5-b279-2969a0f33cd1"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{HOLDING_COMP}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="248ad039-f75f-4edc-9335-7ed96b1334f9">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column13"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="fa4d594b-c528-4dd5-9e25-ab4980c793e7"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Financial Auxiliaries  and other financial intermediaries]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="1ddd691c-f5af-4ea8-99af-a5b02f397659"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FINANCIAL_AUX}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:column width="120" uuid="fbf908b7-3a04-4fe2-a1c6-b9dea3e96d89">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column14"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="91392d9c-a803-455d-ba19-1ef4282ce59e"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Central Government]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="0ebd112d-e820-4e5a-b22a-a44ef9f77f97"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{CENTRAL_GOV}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="5d03c03b-ef06-4af1-9b51-7854f1c0d913">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column15"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="84b35d86-d724-485c-a761-2f0278d303bc"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[State and Local Government]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="3780306b-6e76-428f-b19e-847174c2584e"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{STATE_LOC_GOV}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="6f1525b1-a6bb-4231-948e-681cfafa718d">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column16"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="04802210-abd0-4670-a458-7a88d5cf57b8"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Non-Financial GBC1s]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="392a834f-d454-480b-8515-8970c3a8362c"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{NON_FINANCE_GBC}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="155fab77-cad1-43d9-911a-4dbad866ad6c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column17"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="290f527b-3eee-43c2-ae6f-955a9257cf29"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[GBC2]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="61a86ad0-15b4-49df-bc24-2426c3e090f9"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{GBC2}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="19368cf0-ed95-4b02-a190-b178b9196401">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column18"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="fc05a238-e0d7-46f3-8f12-e26903b74573"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Public Non-Financial Corporations]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="2efda6b8-68d5-44b8-a87e-0ef8e0134f9b"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{PUBLIC_NON_FIN_CORP}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="dd85b1b5-58a6-4794-8933-7d660ff87da8">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column19"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="5476b09e-6bb5-4418-9ad0-d39223fcde78"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Other Non-Financial Corporations]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="70b1288c-b7b5-4a21-8e23-68ce827c1b64"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{OTH_NON_FIN_CORP}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="04b496bd-7db2-4488-ae2a-3a7a96066b33">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column20"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="6ece4847-0fb8-4aad-bf88-24de49fa218f"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Households]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="4635a9b1-e7c8-47d5-9aa0-e2215e3417fa"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{HOUSEHOLD}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="534233f2-eccd-440f-9bb6-6d0a67a7c2c2">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column21"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="ca3fb571-44e6-47eb-86cb-25afa6a128cf"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Nonprofit Institutions serving resident households]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="d1ba74df-551c-4576-9557-c25068a5fa19"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{NON_PROF_INSTITUTE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="240" uuid="50b4c9b4-0357-4a45-88bb-56c349284a17">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="240" height="30" uuid="f581c6b1-063a-4196-b3d7-e65cff3e96d8"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="14"/>
+									</textElement>
+									<text><![CDATA[Nonresidents]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:column width="120" uuid="8b1008ce-de47-4c6f-915d-a833ff61df58">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column22"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="7e9634c7-8358-472b-88f5-20ed98c2f517"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Afflicated Non-residents]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="42ff9c0b-6472-46b8-b3ba-95b8746b797a"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{AFF_NR}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="ce4d590a-8428-4958-9fb3-759d457b2280">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column23"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="011fb754-c2e8-40c8-9dc2-c95806fb1e29"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Other Non-Residents]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="ee527529-0a8b-4f35-b1c4-cca4250e952f"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{OTH_NR}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:column width="120" uuid="df30c843-77ab-4c2d-bdd6-3c32e2b5ecc8">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column24"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+							</jr:tableHeader>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="7ba8c455-e8eb-4b80-9e2f-7e41f1fa43b0"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Total In National Currency]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="959c6d96-7bf2-4d38-8cec-b8818104f992"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{TOT_LC}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:columnGroup width="2880" uuid="80518985-1b7a-4474-9d11-cd56e6527396">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [24]"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="2880" height="30" uuid="800ce485-a591-4009-b47c-5fe9440362b7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="14"/>
+								</textElement>
+								<text><![CDATA[In Foreign Currency]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:column width="120" uuid="d78f8e05-6cad-4299-84cd-1365385ff39c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column25"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="e7baa6b0-0d09-4508-9d3f-64cfe4f3231a"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[CENTRAL BANK]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="47e3ed17-c1b3-4e34-9ae4-3931b0424ee6"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_CENTRAL_BNK}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="a14dd00f-710a-4e5c-9b17-49832f902b55">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column26"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="cf17d237-926c-4eb3-9a91-263ede4c369f"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Banks]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="35708008-e92d-4d95-8054-7a90010d9653"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_BANKS}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="ddfaa679-8034-4826-9b35-7ca9e6309c7f">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column27"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="dcba5243-0caf-4c70-b387-0df0536ebc00"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Non Bank Deposit Taking institutions]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="0e5841d9-3a41-40a4-9866-7f9bd41bbbf8"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_NON_BNK}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="7c7588a6-b251-44c1-aa34-e440aae110a8">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column28"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="ab68678d-8022-4088-82e8-deb5b9ad91b4"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Credit Unions]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="d1dc33ee-ef90-4011-9513-33aec1eb2541"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_CREDIT_UNIONS}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="840" uuid="bcd61dde-5de1-43b8-a13a-480a3e321ef4">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [7]"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="840" height="30" uuid="7ed6e11a-4e51-40f7-b68c-135ebedbde22"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="14"/>
+									</textElement>
+									<text><![CDATA[Other Financial Corporations]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:column width="120" uuid="f147df21-5667-44aa-bc86-64f0d53ac8a9">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column29"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="61c94fb7-262f-4e82-9cb6-db7cf631f10f"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Financial GBC1s]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="c496ba26-96ad-479a-9510-f890d8a8b62f"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_FIN_GBC1}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="e3298418-26e1-4b2e-aff1-7d3114329398">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column30"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="5d4a0614-f53a-400e-8f03-a188acf7107f"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Trusts with Nonresident and GBC Settlors and Beneficiaries]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="f52b72d6-0df4-48aa-9269-a7837921e9c0"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_TRUSTS_NR_GBC}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="af5ea2c9-1507-4fbc-b195-4413b606cb86">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column31"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="3f96c98e-7ba4-4137-8256-e4c5f9a96aa1"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Insurance Corporations]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="c225662d-9572-4e89-9a4e-16539d49f5b2"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_INSURANCE_CORP}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="3ff0f4c9-588d-479d-b387-95a5ba5e31e3">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column32"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="f69d51e7-b24c-44e5-9315-cf626bca726d"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Pension Funds]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="11313aa8-1064-411d-baff-7110bc3b7ffb"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_PENSION}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="4c4dd62b-5abb-4952-aca0-0a9cbc10887d">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column33"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="f49f703a-1fb6-4687-b5a1-ddcd80ea9b24"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Investment Funds]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="2de9c537-0975-43a7-b1e5-c0fc419c78cf"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_INVESTMENT}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="fb6ab70d-ab61-4d30-9fd6-dd4737fde072">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column34"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="2dad4cf2-5231-4a62-a0d8-eacc864be237"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Holding Companies]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="50f24cac-ba4c-4474-8242-86c9c2d2932a"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_HOLDING_COMP}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="120" uuid="2ac07353-14c6-47fc-bde1-9df0e2ffe398">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column35"/>
+								<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+								<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+									<staticText>
+										<reportElement x="0" y="0" width="120" height="120" uuid="c8b56fc8-7bf2-49e7-88d1-2f355a3342f9"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Financial Auxiliaries  and other financial intermediaries]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField pattern="#,##0.00#;(#,##0.00#)">
+										<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="eab1d213-ab5e-4e1b-bd13-b853847339a0"/>
+										<box leftPadding="2"/>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="DejaVu Sans" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{FC_FINANCIAL_AUX}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:column width="120" uuid="9847656f-a981-411f-a66c-df634553afdd">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column36"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="a671a8da-9f6e-4003-9198-4e959909e917"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Central Government]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="c7e0c233-28f1-48ae-9180-98f415566dde"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_CENTRAL_GOV}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="2059d783-5444-45a3-9b98-ed5c9d76d67c">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column37"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="beae3812-b09b-4260-ab8b-4960001b756e"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[State and Local Government]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="ac4cc0a5-2c7f-4499-95d3-ee9444665549"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_STATE_LOC_GOV}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="cbcfecda-c4fe-465d-93fb-30dee82d9425">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column38"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="cf033dc6-c17c-4a66-a52b-aa4c86400d08"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Non-Financial GBC1s]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="a9aaf938-26c7-4756-80a9-0c592b9cbbbd"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_NON_FINANCE_GBC}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="ed1df6c4-77ec-46ab-81a7-83a8935bdc49">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column39"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="cd4f9782-b050-4e32-a896-c41e7b66edcb"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[GBC2]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="b1eb52b4-8da2-491f-9d6e-bfa0380619ba"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_GBC2}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="794cdfbf-e86c-44d5-8740-42fa08b2378b">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column40"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="08d2a6d6-3e35-4dbc-bf5e-1e8cf8f88f84"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Public Non-Financial Corporations]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="3a5b7750-8297-4bb3-96fb-7731f9f47438"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_PUBLIC_NON_FIN_CORP}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="18ac17ad-bb4d-4bf9-ab67-99f34263a9cc">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column41"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="00b4655a-a644-4761-ac00-9052daf2e533"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Other Non-Financial Corporations]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="fdd5fae8-a849-483f-9f4d-5f178b1db9dc"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_OTH_NON_FIN_CORP}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="14c679ea-9033-4ab0-adb5-7c6935a80629">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column42"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="187a82f0-828f-4790-81f0-4910bb34b65f"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Households]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="999b38ab-18eb-4b80-9a58-12fa6fc4cf25"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_HOUSEHOLD}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="120" uuid="93b36bfb-903d-4361-a05a-543fb010da40">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column43"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="7a4c114c-cda0-4a3c-a43a-fe84d5918a79"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[Nonprofit Institutions serving resident households]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="e7fdd083-72bb-4f4f-a206-d0cfcc224fe6"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{FC_NON_PROF_INSTITUTE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:columnGroup width="480" uuid="a20b0104-1d09-46ac-b46d-e9289c8e2135">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [4]"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="480" height="30" uuid="3786da0c-ea27-4cbf-b68c-adff267cabc4"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font size="14"/>
+									</textElement>
+									<text><![CDATA[Nonresidents]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:columnGroup width="240" uuid="fde4f6f7-6282-4872-bd0a-e91df4de68ec">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
+								<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="240" height="30" uuid="b70ec8bc-0f87-40fa-8a15-db096af7f4c6"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font size="14"/>
+										</textElement>
+										<text><![CDATA[Afflicated Non-residents]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:column width="120" uuid="0149ad51-4715-4462-860c-5e10f4e52c48">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column44"/>
+									<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+									<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="120" height="90" uuid="b9f96e9f-e9fd-4481-8b1c-680cb28c252a"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12" isBold="true"/>
+											</textElement>
+											<text><![CDATA[Banks]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="30">
+										<textField pattern="#,##0.00#;(#,##0.00#)">
+											<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="9babcebe-5257-4150-a0ae-2982e1b907ad"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Right" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{FC_AFF_NR_BNK}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+								<jr:column width="120" uuid="489a1b78-c09d-4331-9988-c77a6f3fe74e">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column45"/>
+									<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+									<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="120" height="90" uuid="b3f32583-3296-47c3-b738-91bf95355d65"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12" isBold="true"/>
+											</textElement>
+											<text><![CDATA[Others]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="30">
+										<textField pattern="#,##0.00#;(#,##0.00#)">
+											<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="25aff4a0-5bb8-43ad-83ec-583bfdda6167"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Right" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{FC_AFF_NR_NON_BNK}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+							</jr:columnGroup>
+							<jr:columnGroup width="240" uuid="3a37a2ba-6ba3-440b-a920-9b372e0e0d1d">
+								<property name="com.jaspersoft.studio.components.table.model.column.name" value="Columns [2]"/>
+								<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="240" height="30" uuid="9a5f432f-3508-46c5-90c7-da9ba1d82705"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font size="14"/>
+										</textElement>
+										<text><![CDATA[Other Non-Residents]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:column width="120" uuid="6559ff98-0195-4fd8-9c32-68581d35d076">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column46"/>
+									<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+									<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="120" height="90" uuid="78e2fa52-d39a-46d2-b6b5-96b8772f4a4e"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12" isBold="true"/>
+											</textElement>
+											<text><![CDATA[Banks]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="30">
+										<textField pattern="#,##0.00#;(#,##0.00#)">
+											<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="94bbf7a7-9504-4e6f-bfa5-5533f84afd9b"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Right" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{FC_OTH_NR_BNK}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+								<jr:column width="120" uuid="ba5db7af-437e-4ebb-a277-4ed20c4c2a34">
+									<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column47"/>
+									<jr:tableHeader style="Table_TH" height="0" rowSpan="1"/>
+									<jr:columnHeader style="Table_CH" height="90" rowSpan="1">
+										<staticText>
+											<reportElement x="0" y="0" width="120" height="90" uuid="276ccfbe-8219-4410-a509-d2118d0c3ade"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Center" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12" isBold="true"/>
+											</textElement>
+											<text><![CDATA[Others]]></text>
+										</staticText>
+									</jr:columnHeader>
+									<jr:detailCell style="Table_TD" height="30">
+										<textField pattern="#,##0.00#;(#,##0.00#)">
+											<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="f14b2eab-a295-47e5-81aa-fd380f85050a"/>
+											<box leftPadding="2"/>
+											<textElement textAlignment="Right" verticalAlignment="Middle">
+												<font fontName="DejaVu Sans" size="12"/>
+											</textElement>
+											<textFieldExpression><![CDATA[$F{FC_OTH_NR_NON_BNK}]]></textFieldExpression>
+										</textField>
+									</jr:detailCell>
+								</jr:column>
+							</jr:columnGroup>
+						</jr:columnGroup>
+						<jr:column width="120" uuid="49e99c3e-7e43-44f6-a24d-07896a2dc3a8">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column48"/>
+							<jr:tableHeader style="Table_TH" height="30" rowSpan="2"/>
+							<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+								<box>
+									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="120" height="120" uuid="0ebe0a87-6395-4b33-bef6-83c25f52eef0"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12" isBold="true"/>
+									</textElement>
+									<text><![CDATA[TOT_FC]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField pattern="#,##0.00#;(#,##0.00#)">
+									<reportElement style="Style1" x="0" y="0" width="120" height="30" uuid="6391d588-1123-4d8e-8595-c361288416c6"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="DejaVu Sans" size="12"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{TOT_FC}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:column width="120" uuid="84833bbb-7b83-41d7-89fb-698795e1e1fd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column49"/>
+						<jr:tableHeader style="Table_TH" height="60" rowSpan="3">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</jr:tableHeader>
+						<jr:columnHeader style="Table_CH" height="120" rowSpan="2">
+							<box>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="120" uuid="2504e265-6f57-445d-be05-d8210af47d6d"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[GRAND_TOT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="#,##0.00#;(#,##0.00#)">
+								<reportElement style="Style12" x="0" y="0" width="120" height="30" uuid="056aec50-c999-4a2e-b8db-1972e24c7378"/>
+								<box leftPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="DejaVu Sans" size="12"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{GRAND_TOT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

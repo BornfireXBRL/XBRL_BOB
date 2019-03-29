@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 5.5.2  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fim100" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="232fbec6-388e-43da-986f-a105f8d9a7da">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Style1" mode="Opaque" forecolor="#000000" backcolor="#99CDFF"/>
+	<parameter name="REPORT_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA["BLS0100"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="VERSION_NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FROM_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TO_DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["31-AUG-2018"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CRNCY_CODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["MUR"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORTING_FREQUENCY" class="java.lang.String"/>
+	<parameter name="TAXONOMY" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM TABLE(FIM0100_S1_RPT_FUN($P{REPORT_ID},$P{VERSION_NO},$P{REPORT_DATE},$P{FROM_DATE},$P{TO_DATE},$P{CRNCY_CODE}))]]>
+	</queryString>
+	<field name="REPORT_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="REPORT_ID"/>
+	</field>
+	<field name="REPORT_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="REPORT_DATE"/>
+	</field>
+	<field name="FROM_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="FROM_DATE"/>
+	</field>
+	<field name="TO_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="TO_DATE"/>
+	</field>
+	<field name="VERSION_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="VERSION_NO"/>
+	</field>
+	<field name="CURRENCY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CURRENCY"/>
+	</field>
+	<field name="INSTITUTION_SL_NO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="INSTITUTION_SL_NO"/>
+	</field>
+	<field name="INSTITUTE_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INSTITUTE_NAME"/>
+	</field>
+	<field name="INSTITUTE_CODE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INSTITUTE_CODE"/>
+	</field>
+	<title>
+		<band height="230" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="80" width="380" height="30" uuid="f55131f7-d26a-4fd6-b207-bca9f3195c7c"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CRNCY_CODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="235" height="30" uuid="58d785ee-4c30-486d-a396-c9f91ba4b422"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Taxonomy Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="235" height="30" uuid="7a5fdfdf-d622-4892-b5c2-ba8e91f9a0b8"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Report Reference No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="235" height="30" uuid="7b9a60df-7c6c-4b92-a877-7c6ba1e0d700"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting End Date]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="170" width="380" height="30" uuid="ebde2139-861e-45f8-b33e-cbdc829bb107"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TO_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="50" width="380" height="30" uuid="5218db8f-e13e-4b78-a849-6206c50af447"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TAXONOMY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="235" y="140" width="10" height="30" uuid="3ecca060-3538-4187-81d7-ddc40cd8e52e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="235" height="30" uuid="fe1591a8-95c3-4b3e-9177-be76139f696f"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Start Date]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="140" width="380" height="30" uuid="706a1233-0117-4e36-a474-e7179a731b63"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FROM_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="235" y="50" width="10" height="30" uuid="d8cd565a-5236-42ef-b8d6-e28ed816c7b0"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="200" width="10" height="30" uuid="a8ff3a45-4012-4baa-869f-920f4bbb524f"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="235" height="30" uuid="842ea83c-bbb9-4b20-81ad-b9eb97865dc8"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="170" width="10" height="30" uuid="cc9f9074-ae65-40e7-a561-f91f88b5457d"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="110" width="10" height="30" uuid="ed0207de-f721-478b-adc3-89824197d8b6"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="235" height="30" uuid="35b78b80-8385-4ee4-94de-b57ef67ed763"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Reporting Frequency]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="110" width="380" height="30" uuid="1728aa77-93ed-4cd6-ba5b-d577d5ac207e"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REPORTING_FREQUENCY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="235" y="80" width="10" height="30" uuid="0aac084e-e22e-4ec2-82b4-7a76bdc5fa20"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="250" y="200" width="380" height="30" uuid="a1573c29-719e-405d-bf30-b668137758ae"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VERSION_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="0" width="780" height="40" backcolor="#2D27DB" uuid="f34c28f3-1ed8-4aee-9ecc-c860909f94dd"/>
+				<textElement>
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[FIM0100-Statement of Interbank Money Market Transactions]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement style="Style1" x="0" y="37" width="111" height="30" uuid="9522b7e5-eeaa-4a1e-ad1b-2c89a020a3bf"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serial Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="331" y="37" width="111" height="30" uuid="ac2fcd4d-fb30-4dca-aeef-7c4d6b32d909"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Institution Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="0" y="10" width="442" height="27" uuid="f81bf22b-e12e-4898-8f15-52dd51a58ec9"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Statement of Interbank Transactions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Style1" x="110" y="37" width="221" height="30" uuid="aae1f414-bf7b-4f4c-b8e6-d35776f961e5"/>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name of Institution]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="110" height="30" uuid="6e905bba-82f3-4913-ab58-a2b9aad90911">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bc49da77-f4b5-453f-ab20-3e9e93c4ef3e"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INSTITUTION_SL_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="0" width="221" height="30" uuid="83b3ddc8-c19c-4d4f-b109-394599bd4cc0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d77e7b5f-98cf-4191-a7d2-bcfb6fbe7f48"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INSTITUTE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="331" y="0" width="111" height="30" uuid="8d555ed7-f5d3-4d7f-a28b-ca9e6781e1fc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="299b394c-2b8d-41ef-9e2c-6311fbe36151"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INSTITUTE_CODE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
